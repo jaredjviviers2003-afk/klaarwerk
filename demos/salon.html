@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en-ZA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Glow Hair & Beauty (demo) | Klaarwerk Studio</title>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=DM+Sans:wght@400;500;700&display=swap">
+<style>
+:root{--bg:#FBF6F2;--surface:#FFFFFF;--ink:#3A2233;--muted:#7A6672;--line:#EBDDD5;--accent:#B5546F;--on-accent:#FFFFFF;--dark:#3A2233;--on-dark:#FBF6F2;--soft:#F6E3E7;--display:'Fraunces',Georgia,serif;--body:'DM Sans',system-ui,sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);line-height:1.05;margin:0;text-wrap:balance}
+p{margin:0} a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.demo{background:#13232B;color:#F3F5F2;font:500 14px/1.4 system-ui,sans-serif;padding:10px 16px;text-align:center}
+.demo a{color:#F2BE22;font-weight:700}
+nav{padding-block:18px;border-bottom:1px solid var(--line);background:var(--surface)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.brand{font-family:var(--display);font-weight:600;font-size:1.4rem;display:flex;align-items:center;gap:10px;letter-spacing:0}
+.brand .mk{width:36px;height:36px;border-radius:14px;background:var(--accent);color:var(--on-accent);display:grid;place-items:center}
+.links{display:flex;gap:22px;color:var(--muted);font-weight:500}
+.links a{text-decoration:none}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:999px;font-weight:700;text-decoration:none;border:2px solid transparent}
+.btn-accent{background:var(--accent);color:var(--on-accent)}
+.btn-line{border-color:currentColor}
+
+.hero{background:var(--dark);color:var(--on-dark)}
+.hero .wrap{padding-block:clamp(48px,8vw,96px);display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(28px,5vw,56px);align-items:center}
+.hero .eb{font-size:.8rem;text-transform:uppercase;letter-spacing:.14em;font-weight:700;color:var(--accent)}
+.hero h1{font-size:clamp(2.4rem,5.6vw,4.2rem);font-weight:500;letter-spacing:-.02em;margin-top:14px}
+.hero h1 em{font-style:italic;color:var(--accent)}
+.hero p.lede{margin-top:20px;font-size:1.1rem;max-width:48ch;opacity:.85}
+.ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.art{aspect-ratio:4/5;border-radius:24px;position:relative;overflow:hidden;background:radial-gradient(circle at 30% 30%,#F6E3E7,#D99AAB 60%,#B5546F);display:grid;place-items:center;color:#FFFFFF}
+.art .cap{position:absolute;left:16px;bottom:16px;right:16px;background:rgba(255,255,255,.9);color:#13232B;border-radius:12px;padding:12px 14px;font-size:.85rem;display:flex;gap:10px;align-items:center}
+section{padding-block:clamp(56px,8vw,88px)}
+.eyebrow{font-size:.8rem;text-transform:uppercase;letter-spacing:.14em;font-weight:700;color:var(--accent)}
+h2{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:500;letter-spacing:-.02em;margin-top:10px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:18px;margin-top:36px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:24px;display:flex;flex-direction:column;gap:10px}
+.card .ic{width:48px;height:48px;border-radius:14px;background:var(--soft);color:var(--accent);display:grid;place-items:center}
+.card p{color:var(--muted);font-size:.96rem}
+.card .price{margin-top:auto;font-weight:700;color:var(--ink)}
+.band{background:var(--surface);border-block:1px solid var(--line)}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,56px);align-items:center}
+.ticks{list-style:none;padding:0;margin:22px 0 0;display:flex;flex-direction:column;gap:12px}
+.ticks li{display:flex;gap:12px;align-items:flex-start}
+.ticks li span{flex:none;color:var(--accent);margin-top:2px}
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:32px}
+.gal div{aspect-ratio:1;border-radius:14px;display:grid;place-items:end start;padding:12px;font-size:.8rem;font-weight:600}
+.rev{margin-top:32px;border:2px dashed var(--line);border-radius:24px;padding:28px;text-align:center;color:var(--muted)}
+.rev b{display:block;font-size:1.6rem;color:var(--accent);letter-spacing:4px}
+.contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.box{background:var(--dark);color:var(--on-dark);border-radius:24px;padding:32px;display:flex;flex-direction:column;gap:14px}
+.row{display:flex;flex-direction:column;border-top:1px solid rgba(255,255,255,.18);padding-top:12px}
+.row span{font-size:.78rem;text-transform:uppercase;letter-spacing:.1em;opacity:.7}
+.row b{font-size:1.1rem}
+footer{padding-block:28px;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line)}
+.wa{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:max(16px,env(safe-area-inset-bottom,0px));background:#25D366;color:#073B1E;font-weight:700;padding:14px 20px;border-radius:999px;text-decoration:none;display:flex;gap:8px;align-items:center;box-shadow:0 10px 30px -10px rgba(0,0,0,.4)}
+@media (max-width:820px){.hero .wrap,.split,.contact .wrap{grid-template-columns:1fr}.links{display:none}.art{aspect-ratio:16/10}}
+@media (max-width:480px){.gal{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<div class="demo">Demo design by Klaarwerk Studio. Glow Hair & Beauty is a made-up business. <a href="../#brief">Want a site like this? Get a quote</a></div>
+<nav><div class="wrap"><div class="brand"><span class="mk"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M8.5 7.5 20 19M8.5 16.5 20 5"/></svg></span>Glow Hair & Beauty</div><div class="links"><a href="#services">Treatments</a><a href="#about">Our work</a><a href="#contact">Book</a></div><a class="btn btn-accent" href="#contact">Book now</a></div></nav>
+
+<header class="hero"><div class="wrap">
+<div><p class="eb">Hair · Nails · Lashes · Pretoria East</p><h1>Leave feeling like <em>your best self.</em></h1><p class="lede">Cuts, colour, nails and lashes in a calm, friendly studio. Book on WhatsApp in under a minute.</p><div class="ctas"><a class="btn btn-accent" href="#contact">Book on WhatsApp</a><a class="btn btn-line" href="#services">See treatments</a></div></div>
+<div class="art" role="img" aria-label="Placeholder for a photo of the salon"><div style="opacity:.85"><svg width="150" height="150" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M8.5 7.5 20 19M8.5 16.5 20 5"/></svg></div><div class="cap"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M6 18l2.5-2.5M15.5 8.5 18 6"/></svg> Photo of your salon goes here</div></div>
+</div></header>
+<section id="services"><div class="wrap"><p class="eyebrow">Treatments</p><h2>Prices you can see before you book</h2><div class="grid"><div class="card"><div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M8.5 7.5 20 19M8.5 16.5 20 5"/></svg></div><h3>Cut & blow-dry</h3><p>Wash, cut and style for short to long hair.</p><p class="price">From R___</p></div><div class="card"><div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M6 18l2.5-2.5M15.5 8.5 18 6"/></svg></div><h3>Colour</h3><p>Full colour, highlights and balayage.</p><p class="price">From R___</p></div><div class="card"><div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 13V5a1.5 1.5 0 0 1 3 0v6M11 11V4a1.5 1.5 0 0 1 3 0v7M14 11V5.5a1.5 1.5 0 0 1 3 0V14a7 7 0 0 1-7 7 6 6 0 0 1-5-3l-2-4a1.5 1.5 0 0 1 2.5-1.6L8 15"/></svg></div><h3>Nails</h3><p>Gel overlays, acrylics and pedicures.</p><p class="price">From R___</p></div><div class="card"><div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M6 18l2.5-2.5M15.5 8.5 18 6"/></svg></div><h3>Lashes & brows</h3><p>Lash extensions, lifts, tints and shaping.</p><p class="price">From R___</p></div></div></div></section>
+<section class="band" id="about"><div class="wrap split">
+<div><p class="eyebrow">Our work</p><h2>Real clients, real results</h2><p style="color:var(--muted);margin-top:16px">This is where your own photos of clients' hair and nails go. Real work sells better than anything we could write.</p><ul class="ticks"><li><span><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 5 6v6c0 4.5 3 7.5 7 9 4-1.5 7-4.5 7-9V6z"/><path d="m9 12 2 2 4-4"/></svg></span>Booking on WhatsApp, any time</li><li><span><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 5 6v6c0 4.5 3 7.5 7 9 4-1.5 7-4.5 7-9V6z"/><path d="m9 12 2 2 4-4"/></svg></span>Price list on the site</li><li><span><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 5 6v6c0 4.5 3 7.5 7 9 4-1.5 7-4.5 7-9V6z"/><path d="m9 12 2 2 4-4"/></svg></span>Gift vouchers available</li></ul></div>
+<div><div class="gal"><div style="background:#D99AAB;color:#fff">Balayage</div><div style="background:#F6E3E7;color:#3A2233">Nails</div><div style="background:#3A2233;color:#fff">Cut</div><div style="background:#B5546F;color:#fff">Lashes</div><div style="background:#EBDDD5;color:#3A2233">Colour</div><div style="background:#7A6672;color:#fff">Studio</div></div></div>
+</div></section>
+<section><div class="wrap"><p class="eyebrow">Reviews</p><h2>Loved by our clients</h2><div class="rev"><b>★★★★★</b>Your real Google reviews show here, updated automatically.</div></div></section>
+<section class="contact" id="contact"><div class="wrap">
+<div><p class="eyebrow">Contact</p><h2>Book your next visit</h2><p style="color:var(--muted);margin-top:14px;max-width:44ch">Tell us what you'd like and when. We'll confirm your slot on WhatsApp.</p><div class="ctas"><a class="btn btn-accent" href="https://wa.me/27662054680?text=Hi%20Klaarwerk%2C%20I%20saw%20the%20salon%20demo%20site%20and%20I%27d%20like%20a%20website%20like%20it."><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21l1.6-4.6A8.5 8.5 0 1 1 8 19.6z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 .8a4 4 0 0 1-1.8-1.8l.8-1-1-2-1.5 1z"/></svg> Book on WhatsApp</a></div></div>
+<div class="box"><div class="row"><span>Phone</span><b>Your number here</b></div><div class="row"><span>Hours</span><b>Tue–Sat, 08:00–17:00</b></div><div class="row"><span>Where</span><b>Your address, Pretoria East</b></div></div>
+</div></section>
+<footer><div class="wrap">Demo website designed by <a href="../">Klaarwerk Studio</a>. Business, details and photos are placeholders.</div></footer>
+<a class="wa" href="https://wa.me/27662054680?text=Hi%20Klaarwerk%2C%20I%20saw%20the%20salon%20demo%20site%20and%20I%27d%20like%20a%20website%20like%20it."><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21l1.6-4.6A8.5 8.5 0 1 1 8 19.6z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 .8a4 4 0 0 1-1.8-1.8l.8-1-1-2-1.5 1z"/></svg> WhatsApp</a>
+</body>
+</html>

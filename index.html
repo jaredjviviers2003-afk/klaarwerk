@@ -172,15 +172,32 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   .navlinks{display:none}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important}}
+/* launch banner */
+.launch{background:var(--sun);color:var(--sun-ink);text-align:center;font-weight:600;font-size:.95rem;padding:10px 16px}
+.launch a{color:inherit;font-weight:700}
+/* examples */
+.examples{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px}
+.ex{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--surface);text-decoration:none;color:var(--ink);transition:transform .15s ease}
+.ex:hover{transform:translateY(-3px)}
+.ex .shot{aspect-ratio:16/10;padding:18px;display:flex;flex-direction:column;justify-content:space-between}
+.ex .shot b{font-size:1.35rem;line-height:1.1;max-width:14ch}
+.ex .shot span{font-size:.75rem;font-weight:600;align-self:flex-start;padding:6px 12px;border-radius:999px}
+.ex .meta{padding:18px;display:flex;flex-direction:column;gap:4px}
+.ex .meta small{color:var(--muted)}
+.ex .meta em{font-style:normal;color:var(--accent);font-weight:600;margin-top:6px}
+.legal a{color:var(--muted)}
+@media (max-width:900px){.examples{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 
+<div class="launch">Launch special: our first 5 clients get 3 months of the Care Plan free (worth R1,350). <a href="#brief">Claim a spot</a></div>
 <nav>
   <div class="wrap">
     <a class="logo" href="#top" aria-label="Klaarwerk home"><svg xmlns="http://www.w3.org/2000/svg" class="logo-svg" viewBox="-40 -800 5467.0 880" aria-hidden="true"><g transform="translate(0 0) scale(1)"><path fill="#F2BE22" d="M0 -350 A350 350 0 1 1 350 0 H0 Z"/><path fill="none" stroke="#0E6E55" stroke-width="78" stroke-linecap="round" stroke-linejoin="round" d="M200 -350 L305 -245 L505 -470"/></g><g transform="translate(880 0)"><path class="logo-word" d="M40 0V-660H202V-378Q250 -394 286.5 -423.5Q323 -453 349.0 -491.0Q375 -529 392.0 -572.5Q409 -616 418 -660H600Q588 -603 565.5 -552.5Q543 -502 509.0 -460.0Q475 -418 430.0 -385.5Q385 -353 328 -332V-324Q389 -329 429.0 -316.5Q469 -304 494.0 -280.0Q519 -256 533.5 -225.5Q548 -195 558 -164L611 0H431L393 -147Q384 -183 367.5 -205.5Q351 -228 325.0 -238.0Q299 -248 259 -248H202V0Z M647.0 0V-700H809.0V0Z M1008.0 14Q968.0 14 932.0 0.0Q896.0 -14 873.0 -45.5Q850.0 -77 850.0 -130Q850.0 -179 869.0 -209.5Q888.0 -240 920.0 -258.5Q952.0 -277 990.0 -286.5Q1028.0 -296 1065.0 -303Q1117.0 -313 1143.0 -319.0Q1169.0 -325 1178.5 -333.0Q1188.0 -341 1188.0 -355Q1188.0 -384 1166.5 -399.0Q1145.0 -414 1110.0 -414Q1088.0 -414 1066.0 -406.0Q1044.0 -398 1030.0 -377.5Q1016.0 -357 1017.0 -319L873.0 -329Q871.0 -392 892.0 -433.5Q913.0 -475 949.5 -498.5Q986.0 -522 1029.5 -532.0Q1073.0 -542 1116.0 -542Q1195.0 -542 1246.0 -512.5Q1297.0 -483 1321.5 -427.5Q1346.0 -372 1346.0 -293V-199Q1346.0 -166 1346.0 -132.5Q1346.0 -99 1346.0 -66.0Q1346.0 -33 1346.0 0H1206.0Q1206.0 -36 1206.0 -73.0Q1206.0 -110 1206.0 -151H1200.0Q1196.0 -106 1170.5 -68.5Q1145.0 -31 1103.5 -8.5Q1062.0 14 1008.0 14ZM1075.0 -104Q1092.0 -104 1111.5 -110.5Q1131.0 -117 1148.5 -132.0Q1166.0 -147 1177.0 -173.5Q1188.0 -200 1188.0 -239V-263L1215.0 -266Q1207.0 -253 1188.5 -245.0Q1170.0 -237 1147.0 -232.5Q1124.0 -228 1100.5 -223.5Q1077.0 -219 1057.0 -211.5Q1037.0 -204 1024.5 -191.5Q1012.0 -179 1012.0 -157Q1012.0 -131 1030.5 -117.5Q1049.0 -104 1075.0 -104Z M1539.0 14Q1499.0 14 1463.0 0.0Q1427.0 -14 1404.0 -45.5Q1381.0 -77 1381.0 -130Q1381.0 -179 1400.0 -209.5Q1419.0 -240 1451.0 -258.5Q1483.0 -277 1521.0 -286.5Q1559.0 -296 1596.0 -303Q1648.0 -313 1674.0 -319.0Q1700.0 -325 1709.5 -333.0Q1719.0 -341 1719.0 -355Q1719.0 -384 1697.5 -399.0Q1676.0 -414 1641.0 -414Q1619.0 -414 1597.0 -406.0Q1575.0 -398 1561.0 -377.5Q1547.0 -357 1548.0 -319L1404.0 -329Q1402.0 -392 1423.0 -433.5Q1444.0 -475 1480.5 -498.5Q1517.0 -522 1560.5 -532.0Q1604.0 -542 1647.0 -542Q1726.0 -542 1777.0 -512.5Q1828.0 -483 1852.5 -427.5Q1877.0 -372 1877.0 -293V-199Q1877.0 -166 1877.0 -132.5Q1877.0 -99 1877.0 -66.0Q1877.0 -33 1877.0 0H1737.0Q1737.0 -36 1737.0 -73.0Q1737.0 -110 1737.0 -151H1731.0Q1727.0 -106 1701.5 -68.5Q1676.0 -31 1634.5 -8.5Q1593.0 14 1539.0 14ZM1606.0 -104Q1623.0 -104 1642.5 -110.5Q1662.0 -117 1679.5 -132.0Q1697.0 -147 1708.0 -173.5Q1719.0 -200 1719.0 -239V-263L1746.0 -266Q1738.0 -253 1719.5 -245.0Q1701.0 -237 1678.0 -232.5Q1655.0 -228 1631.5 -223.5Q1608.0 -219 1588.0 -211.5Q1568.0 -204 1555.5 -191.5Q1543.0 -179 1543.0 -157Q1543.0 -131 1561.5 -117.5Q1580.0 -104 1606.0 -104Z M1931.0 0V-287V-528H2071.0V-318H2079.0Q2085.0 -402 2102.5 -450.5Q2120.0 -499 2146.5 -519.5Q2173.0 -540 2206.0 -540Q2224.0 -540 2243.5 -535.0Q2263.0 -530 2282.0 -519L2274.0 -339Q2252.0 -352 2231.0 -358.5Q2210.0 -365 2191.0 -365Q2159.0 -365 2137.0 -347.0Q2115.0 -329 2103.5 -294.0Q2092.0 -259 2092.0 -209V0Z M2420.0 0 2295.0 -528H2467.0L2528.0 -136H2533.0L2601.0 -528H2780.0L2846.0 -136H2851.0L2917.0 -528H3078.0L2955.0 0H2744.0L2690.0 -356H2685.0L2629.0 0Z M3338.0 14Q3263.0 14 3212.5 -7.5Q3162.0 -29 3131.0 -66.5Q3100.0 -104 3086.5 -152.0Q3073.0 -200 3073.0 -253Q3073.0 -310 3087.5 -362.0Q3102.0 -414 3132.5 -454.5Q3163.0 -495 3211.5 -518.5Q3260.0 -542 3328.0 -542Q3396.0 -542 3444.5 -518.5Q3493.0 -495 3522.0 -453.0Q3551.0 -411 3559.5 -356.0Q3568.0 -301 3557.0 -237L3174.0 -231V-319L3433.0 -324L3412.0 -273Q3418.0 -319 3410.5 -350.5Q3403.0 -382 3383.0 -398.5Q3363.0 -415 3328.0 -415Q3291.0 -415 3269.0 -396.0Q3247.0 -377 3238.0 -342.5Q3229.0 -308 3229.0 -261Q3229.0 -180 3256.0 -143.0Q3283.0 -106 3339.0 -106Q3363.0 -106 3379.0 -112.0Q3395.0 -118 3405.0 -129.5Q3415.0 -141 3419.0 -157.5Q3423.0 -174 3422.0 -195L3570.0 -187Q3573.0 -154 3563.5 -119.0Q3554.0 -84 3528.0 -54.0Q3502.0 -24 3455.5 -5.0Q3409.0 14 3338.0 14Z M3614.0 0V-287V-528H3754.0V-318H3762.0Q3768.0 -402 3785.5 -450.5Q3803.0 -499 3829.5 -519.5Q3856.0 -540 3889.0 -540Q3907.0 -540 3926.5 -535.0Q3946.0 -530 3965.0 -519L3957.0 -339Q3935.0 -352 3914.0 -358.5Q3893.0 -365 3874.0 -365Q3842.0 -365 3820.0 -347.0Q3798.0 -329 3786.5 -294.0Q3775.0 -259 3775.0 -209V0Z M4002.0 0V-700H4160.0V-329Q4194.0 -347 4218.5 -370.0Q4243.0 -393 4260.0 -419.5Q4277.0 -446 4287.5 -473.5Q4298.0 -501 4305.0 -528H4491.0Q4480.0 -488 4459.5 -450.5Q4439.0 -413 4409.0 -380.5Q4379.0 -348 4339.5 -322.0Q4300.0 -296 4252.0 -279V-271Q4314.0 -281 4353.5 -273.5Q4393.0 -266 4416.0 -245.5Q4439.0 -225 4451.5 -194.0Q4464.0 -163 4471.0 -125L4494.0 0H4319.0L4308.0 -88Q4304.0 -120 4297.0 -148.0Q4290.0 -176 4270.0 -193.5Q4250.0 -211 4207.0 -211H4160.0V0Z"/></g></svg></a>
     <div class="navlinks">
       <a href="#how">How it works</a>
+      <a href="#work">Examples</a>
       <a href="#pricing">Pricing</a>
       <a href="#faq">FAQ</a>
     </div>
@@ -230,6 +247,19 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       <div class="step"><span class="num">02</span><h3>We write and design</h3><p>Our team writes the copy, designs every page and builds it mobile-first, because that's how your customers search.</p><span class="when">Days 2–9</span></div>
       <div class="step"><span class="num">03</span><h3>You review</h3><p>You get a preview link. Ask for changes on WhatsApp. Two rounds of edits are included.</p><span class="when">Days 10–12</span></div>
       <div class="step"><span class="num">04</span><h3>Go live</h3><p>We connect your domain, email, Google Business Profile and WhatsApp button, then hand you the keys.</p><span class="when">Day 14</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="work" style="padding-top:0">
+  <div class="wrap">
+    <p class="eyebrow">Examples</p>
+    <h2 style="margin-top:12px">See what your site could look like.</h2>
+    <p class="lede" style="margin-top:14px">Three demo designs for made-up businesses. Tap one to open the full site on your phone.</p>
+    <div class="examples">
+      <a class="ex" href="demos/plumbing.html"><div class="shot" style="background:#0F1C2E;color:#F4F5F7"><span style="background:#F26B1D;color:#fff">Trades</span><b style="font-family:Archivo,var(--display);font-weight:900">Burst geyser? <span style="all:unset;color:#F26B1D">We're on our way.</span></b></div><div class="meta"><strong>Mokoena Plumbing</strong><small>Plumber · emergency call-outs</small><em>View demo →</em></div></a>
+      <a class="ex" href="demos/salon.html"><div class="shot" style="background:#3A2233;color:#FBF6F2"><span style="background:#B5546F;color:#fff">Beauty</span><b style="font-family:Fraunces,Georgia,serif;font-weight:500">Leave feeling like <i style="color:#E7A6B8">your best self.</i></b></div><div class="meta"><strong>Glow Hair &amp; Beauty</strong><small>Salon · bookings on WhatsApp</small><em>View demo →</em></div></a>
+      <a class="ex" href="demos/guesthouse.html"><div class="shot" style="background:linear-gradient(180deg,#E9C98B,#D79B5A 40%,#6B7A3A 41%,#4E5A29);color:#FFFDF8"><span style="background:#FFFDF8;color:#6B7A3A">Stay</span><b style="font-family:'Libre Caslon Text',Georgia,serif;font-weight:400;color:#FFFDF8">Quiet nights, <i>big skies.</i></b></div><div class="meta"><strong>Karoo Rest Guesthouse</strong><small>B&amp;B · rooms and enquiries</small><em>View demo →</em></div></a>
     </div>
   </div>
 </section>
@@ -323,6 +353,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       <details><summary>Is the Care Plan required?</summary><p>No. Your first year of the domain is included in the build. After launch you can take the Care Plan, or host the site yourself and we'll hand over everything.</p></details>
       <details><summary>How do I pay?</summary><p>EFT into our business account. 50% deposit starts the work, and the other 50% is paid when you approve the final site, before it goes live.</p></details>
       <details><summary>What if I don't like the design?</summary><p>Two rounds of changes are included. Most clients only need one. Bigger changes after that are quoted upfront before we do them.</p></details>
+      <details><summary>What if I change my mind?</summary><p>The 50% deposit is non-refundable once we've started work, because we start writing and designing straight away. The full terms are <a href="terms.html">here</a>.</p></details>
       <details><summary>Do you work outside Gauteng?</summary><p>Yes. Everything happens online and on WhatsApp, so we build for businesses anywhere in South Africa.</p></details>
       <details><summary>Will I show up on Google?</summary><p>We set up your site and Google Business Profile so Google can find and list you. Ranking takes time and depends on competition, so we don't promise a position. Anyone who guarantees "page one" is guessing.</p></details>
     </div>
@@ -352,6 +383,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <span class="status" id="status" role="status"></span>
       </div>
       <div class="output" id="preview" aria-live="polite"></div>
+      <p class="muted" style="grid-column:1 / -1;font-size:.85rem">We only use your details to reply to your quote request. See our <a href="privacy.html">privacy notice</a>.</p>
     </form>
   </div>
 </section>
@@ -359,7 +391,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 <footer>
   <div class="wrap">
     <span>© 2026 Klaarwerk Studio · Websites for South African businesses</span>
-    <a href="#top">Back to top</a>
+    <span class="legal"><a href="terms.html">Terms</a> · <a href="privacy.html">Privacy</a> · <a href="#top">Back to top</a></span>
   </div>
 </footer>
 
