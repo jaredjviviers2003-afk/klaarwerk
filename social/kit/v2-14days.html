@@ -1,0 +1,47 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="common.css">
+<style>
+.s1{background:var(--sun);padding:300px 90px 0}
+.s1 h1{font-size:160px}
+.s2{background:var(--ground);padding:170px 90px 0}
+.s2 h2{font-size:86px}
+.track{position:absolute;left:90px;right:140px;top:470px;height:14px;border-radius:7px;background:var(--line)}
+.fill{height:100%;width:0;border-radius:7px;background:var(--green)}
+.step{position:absolute;left:90px;right:140px;top:560px}
+.step .mono{font-size:40px;color:var(--green)}
+.step h3{font-size:150px;margin-top:18px}
+.step p{font-size:48px;line-height:1.25;color:var(--muted);margin:30px 0 0;max-width:17ch}
+.dots{position:absolute;left:90px;top:1180px;display:flex;gap:22px}
+.dot{width:92px;height:92px;border-radius:50%;border:4px solid var(--line);display:grid;place-items:center;font:800 40px 'Bricolage Grotesque';color:var(--muted);background:#fff}
+.dot.on{background:var(--green);border-color:var(--green);color:#fff}
+</style></head><body><div class="stage">
+
+<section class="scene s1" data-in="0" data-out="2.8" data-din="0.01" data-fx="none">
+  <h1 class="disp"><span class="a" style="display:block" data-in="0.1">Want a</span><span class="a" style="display:block" data-in="0.4">website</span><span class="a" style="display:block" data-in="0.7">but no</span><span class="a" style="display:block" data-in="1.0" data-fx="pop">time?</span></h1>
+  <p class="a" data-in="1.7" style="font-size:50px;margin-top:70px;font-weight:600">You do one call. We do the rest.</p>
+</section>
+
+<section class="scene s2" data-in="2.8" data-out="11.6" data-din="0.01" data-fx="none">
+  <h2 class="disp a" data-in="2.9">Live in 14 days.<br>Here's how.</h2>
+  <div class="track a" data-in="3.0"><div class="fill" id="fill"></div></div>
+  <div class="step a" data-in="3.3" data-out="5.3" data-fx="right"><div class="mono">Day 1</div><h3 class="disp">One call</h3><p>Tell us about your business. About 30 minutes.</p></div>
+  <div class="step a" data-in="5.5" data-out="7.5" data-fx="right"><div class="mono">Day 2–9</div><h3 class="disp">We build</h3><p>We write the words and design every page.</p></div>
+  <div class="step a" data-in="7.7" data-out="9.7" data-fx="right"><div class="mono">Day 10–12</div><h3 class="disp">You check</h3><p>Ask for changes. We make them.</p></div>
+  <div class="step a" data-in="9.9" data-fx="right"><div class="mono">Day 14</div><h3 class="disp">You're <span class="hlbox">live.</span></h3><p>Online, on phones, with a WhatsApp button.</p></div>
+  <div class="dots a" data-in="3.1"><div class="dot" id="d0">1</div><div class="dot" id="d1">2</div><div class="dot" id="d2">3</div><div class="dot" id="d3">✓</div></div>
+</section>
+
+<section class="scene cta" data-in="11.6" data-din="0.01" data-fx="none">
+  <img class="a" data-in="11.7" src="img/klaarwerk-logo-white.png" style="width:620px">
+  <p class="disp a" data-in="11.95" style="font-size:84px">Websites for SA businesses</p>
+  <p class="a" data-in="12.2" style="font-size:46px;margin:0;opacity:.9">Done for you in 14 days · from <b style="color:var(--sun)">R6,500</b></p>
+  <div class="pill a" data-in="12.5" data-fx="pop">WhatsApp 066 205 4680</div>
+  <p class="mono a" data-in="12.8" style="font-size:34px;margin:0;color:var(--mint);text-transform:none">@klaarwerk.media</p>
+</section>
+
+</div><script>
+window.custom = (t) => {
+  const p = Math.max(0, Math.min(1, (t - 3.3) / (10.2 - 3.3)));
+  document.getElementById('fill').style.width = (p * 100) + '%';
+  [3.3, 5.5, 7.7, 9.9].forEach((s, i) => document.getElementById('d' + i).classList.toggle('on', t >= s));
+};
+</script><script src="engine.js"></script></body></html>

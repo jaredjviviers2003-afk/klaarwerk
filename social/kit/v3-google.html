@@ -1,0 +1,50 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="common.css">
+<style>
+.s1{background:#fff;padding:230px 70px 0}
+.s1 h2{font-size:84px}
+.search{margin-top:70px;display:flex;align-items:center;gap:22px;border:3px solid var(--line);border-radius:999px;padding:30px 40px;font-size:50px;box-shadow:0 18px 40px -24px rgba(0,0,0,.35)}
+.caret{display:inline-block;width:4px;height:56px;background:var(--ink);vertical-align:middle;margin-left:4px}
+.res{margin-top:44px;display:flex;flex-direction:column;gap:22px}
+.r{border:2px solid var(--line);border-radius:22px;padding:26px 30px;display:flex;justify-content:space-between;align-items:center;gap:20px}
+.r b{font-size:40px}
+.r .st{color:#E0A800;font-size:30px;margin-top:6px}
+.r .tag{flex:none;font-weight:700;font-size:28px;padding:12px 20px;border-radius:999px;background:var(--mint);color:var(--green)}
+.r.you{background:#f6f6f6;border-style:dashed}
+.r.you b{color:#999}
+.r.you .tag{background:#f1d6d0;color:var(--red)}
+.callout{position:absolute;left:70px;right:140px;top:1240px;background:var(--ink);color:#fff;border-radius:28px;padding:40px 44px;font:800 64px/1 'Bricolage Grotesque';letter-spacing:-.03em}
+.s2{background:var(--green);color:#fff;padding:300px 90px 0}
+.s2 .disp{font-size:132px}
+</style></head><body><div class="stage">
+
+<section class="scene s1" data-in="0" data-out="8.4" data-din="0.01" data-fx="none">
+  <h2 class="disp a" data-in="0.1">Your customers<br><span class="hl">Google</span> you first.</h2>
+  <div class="search a" data-in="0.5"><svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="#56656B" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><span><span id="typed"></span><span class="caret" id="caret"></span></span></div>
+  <div class="res">
+    <div class="r a" data-in="3.0" data-fx="up"><div><b>Plumber A</b><div class="st">★★★★★ 4.7 · Open now</div></div><span class="tag">Website</span></div>
+    <div class="r a" data-in="3.4" data-fx="up"><div><b>Plumber B</b><div class="st">★★★★☆ 4.4 · Open now</div></div><span class="tag">Website</span></div>
+    <div class="r you a" data-in="4.0" data-fx="up"><div><b>Your business</b><div class="st" style="color:#aaa">★★★★★ 4.9</div></div><span class="tag">No website</span></div>
+  </div>
+  <div class="callout a" data-in="5.0" data-fx="pop">No website?<br><span style="color:var(--sun)">They call someone else.</span></div>
+</section>
+
+<section class="scene s2" data-in="8.4" data-out="11.6" data-din="0.01" data-fx="none">
+  <p class="disp"><span class="a" style="display:block" data-in="8.5">Show up.</span><span class="a" style="display:block" data-in="9.0">Look trusted.</span><span class="a" style="display:block" data-in="9.5" data-fx="pop"><span class="hlbox">Get the call.</span></span></p>
+</section>
+
+<section class="scene cta" data-in="11.6" data-din="0.01" data-fx="none">
+  <img class="a" data-in="11.7" src="img/klaarwerk-logo-white.png" style="width:620px">
+  <p class="disp a" data-in="11.95" style="font-size:84px">Websites for SA businesses</p>
+  <p class="a" data-in="12.2" style="font-size:46px;margin:0;opacity:.9">Done for you in 14 days · from <b style="color:var(--sun)">R6,500</b></p>
+  <div class="pill a" data-in="12.5" data-fx="pop">WhatsApp 066 205 4680</div>
+  <p class="mono a" data-in="12.8" style="font-size:34px;margin:0;color:var(--mint);text-transform:none">@klaarwerk.media</p>
+</section>
+
+</div><script>
+const Q = 'plumber near me';
+window.custom = (t) => {
+  const n = Math.max(0, Math.min(Q.length, Math.floor((t - 0.9) / 0.09)));
+  document.getElementById('typed').textContent = Q.slice(0, n);
+  document.getElementById('caret').style.opacity = (Math.floor(t * 2.5) % 2 === 0 || n < Q.length) ? 1 : 0;
+};
+</script><script src="engine.js"></script></body></html>

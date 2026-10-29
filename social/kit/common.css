@@ -1,0 +1,20 @@
+@font-face{font-family:'Bricolage Grotesque';src:url('fonts/bricolage.ttf');font-weight:200 800}
+@font-face{font-family:'Familjen Grotesk';src:url('fonts/familjen-grotesk-latin-400-normal.woff2');font-weight:400}
+@font-face{font-family:'Familjen Grotesk';src:url('fonts/familjen-grotesk-latin-600-normal.woff2');font-weight:600}
+@font-face{font-family:'Familjen Grotesk';src:url('fonts/familjen-grotesk-latin-700-normal.woff2');font-weight:700}
+@font-face{font-family:'JetBrains Mono';src:url('fonts/jetbrains-mono-latin-500-normal.woff2');font-weight:500}
+:root{--ground:#F3F5F2;--ink:#13232B;--muted:#56656B;--line:#D6DDD8;--green:#0E6E55;--sun:#F2BE22;--mint:#E3EDE7;--red:#C8442C}
+*{box-sizing:border-box}
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:var(--ink)}
+body{font-family:'Familjen Grotesk',system-ui,sans-serif;color:var(--ink)}
+.stage{position:relative;width:1080px;height:1920px;overflow:hidden}
+.scene{position:absolute;inset:0;opacity:0}
+.a{will-change:transform,opacity;opacity:0}
+.disp{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;letter-spacing:-.035em;line-height:.95;margin:0}
+.mono{font-family:'JetBrains Mono',monospace;font-weight:500;letter-spacing:.08em;text-transform:uppercase}
+.hl{background:linear-gradient(transparent 58%,var(--sun) 58%,var(--sun) 92%,transparent 92%);padding:0 .06em}
+.hlbox{background:var(--sun);color:var(--ink);padding:0 .12em;border-radius:.08em}
+.phone{position:absolute;width:480px;height:920px;border-radius:64px;background:#0b1419;padding:22px;box-shadow:0 40px 80px -30px rgba(0,0,0,.45)}
+.screen{width:100%;height:100%;border-radius:44px;overflow:hidden;background:#fff;position:relative}
+.cta{background:var(--green);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:36px;padding:0 90px}
+.pill{display:inline-flex;align-items:center;gap:16px;background:#25D366;color:#073B1E;font-weight:700;font-size:44px;padding:26px 44px;border-radius:999px}
