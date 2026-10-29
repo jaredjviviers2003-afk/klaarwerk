@@ -1,0 +1,18 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="robots" content="noindex"><title>Klaarwerk file relay</title></head>
+<body style="font:16px system-ui;padding:20px">Sending files to Meta Business Suite… <span id="s"></span>
+<script>
+// Fetches post files from this site and hands them to the window that opened this page (used to upload Klaarwerk's own posts).
+(async () => {
+  const p = new URLSearchParams(location.search);
+  const base = 'packs/' + p.get('pack') + '/';
+  const files = (p.get('f') || '').split(',').filter(Boolean);
+  const out = [];
+  for (const f of files) {
+    const r = await fetch(base + f);
+    out.push({ name: f, type: r.headers.get('content-type') || '', buf: await r.arrayBuffer() });
+  }
+  if (window.opener) window.opener.postMessage({ kwRelay: true, files: out }, '*', out.map(o => o.buf));
+  document.getElementById('s').textContent = 'sent ' + out.length + ' file(s). You can close this tab.';
+  setTimeout(() => window.close(), 1500);
+})();
+</script></body></html>
