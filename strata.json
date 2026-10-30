@@ -1,0 +1,15 @@
+{
+  "style": "brand (Klaarwerk), adapted from soft-glass",
+  "palette": {"bg": "#F3F5F2", "surface": "#FFFFFF", "text": "#13232B", "muted": "#56656B", "primary": "#0E6E55", "secondary": "#F2BE22", "accent": "#7FC8A9"},
+  "fonts": {"display": "Bricolage Grotesque", "body": "Familjen Grotesk"},
+  "motion": {"intensity": "calm", "reducedMotion": "respect"},
+  "sections": [
+    {"role": "hero", "layer": "grain-orbs"},
+    {"role": "social-proof", "layer": "marquee-ribbon"},
+    {"role": "features", "layer": "glow-bento", "tone": "dark"},
+    {"role": "pricing", "layer": "custom"},
+    {"role": "faq", "layer": "custom"},
+    {"role": "cta", "layer": "custom"},
+    {"role": "footer", "layer": "custom"}
+  ]
+}

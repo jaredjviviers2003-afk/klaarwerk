@@ -187,6 +187,63 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .ex .meta em{font-style:normal;color:var(--accent);font-weight:600;margin-top:6px}
 .legal a{color:var(--muted)}
 @media (max-width:900px){.examples{grid-template-columns:1fr}}
+
+/* ===== OpenStrata layers (style: brand, motion: calm). Tokens kept so the site can be re-themed. ===== */
+/* strata:tokens */
+:root{--strata-bg:var(--bg);--strata-surface:var(--surface);--strata-text:var(--ink);--strata-muted:var(--muted);--strata-primary:#0E6E55;--strata-secondary:#F2BE22;--strata-accent:#7FC8A9;--strata-font-display:var(--display);--strata-font-body:var(--body)}
+/* /strata:tokens */
+
+/* grain-orbs: pure-CSS blurred orbs + film grain behind the hero */
+.hero{position:relative;overflow:hidden;isolation:isolate}
+.hero .orbs{position:absolute;inset:0;z-index:-2;filter:blur(70px) saturate(1.15);pointer-events:none}
+.hero .orb{position:absolute;border-radius:50%;opacity:.42;mix-blend-mode:multiply}
+.hero .orb--1{width:38vmax;height:38vmax;left:-10vmax;top:-14vmax;background:var(--strata-primary);opacity:.30;animation:strata-orbit-1 22s ease-in-out infinite alternate}
+.hero .orb--2{width:32vmax;height:32vmax;right:-8vmax;top:4vmax;background:var(--strata-secondary);animation:strata-orbit-2 26s ease-in-out infinite alternate}
+.hero .orb--3{width:26vmax;height:26vmax;left:34vw;bottom:-16vmax;background:var(--strata-accent);animation:strata-orbit-3 19s ease-in-out infinite alternate}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(60% 55% at 30% 45%,color-mix(in srgb,var(--bg) 72%,transparent),transparent 80%);pointer-events:none}
+.hero::after{content:"";position:absolute;inset:-50%;z-index:-1;opacity:.16;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.6 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");animation:strata-grain 1.2s steps(6) infinite}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .hero .orb{mix-blend-mode:screen;opacity:.28}}
+:root[data-theme="dark"] .hero .orb{mix-blend-mode:screen;opacity:.28}
+@keyframes strata-orbit-1{to{transform:translate(18vw,14vh) scale(1.1)}}
+@keyframes strata-orbit-2{to{transform:translate(-22vw,18vh) scale(.9)}}
+@keyframes strata-orbit-3{to{transform:translate(14vw,-24vh) scale(1.2)}}
+@keyframes strata-grain{0%{transform:translate(0,0)}20%{transform:translate(-3%,2%)}40%{transform:translate(2%,-3%)}60%{transform:translate(-2%,-1%)}80%{transform:translate(3%,3%)}100%{transform:translate(0,0)}}
+.hero .browser{backdrop-filter:blur(6px)}
+
+/* marquee-ribbon: two tilted ribbons running opposite ways, boosted by scroll */
+.strata-marquee{position:relative;padding-block:clamp(28px,5vw,56px);overflow:hidden;display:grid}
+.strata-marquee .ribbon{width:110vw;margin-left:-5vw;padding:1rem 0;overflow:hidden;user-select:none}
+.strata-marquee .ribbon--a{background:var(--strata-primary);color:#fff;transform:rotate(-2.5deg);z-index:1}
+.strata-marquee .ribbon--b{background:#13232B;color:transparent;-webkit-text-stroke:1.4px var(--strata-secondary);transform:rotate(1.8deg);margin-top:.6rem}
+.strata-marquee .track{display:flex;width:max-content;will-change:transform}
+.strata-marquee .item{display:inline-flex;align-items:center;gap:1.8rem;padding-right:1.8rem;font-family:var(--display);font-weight:800;font-size:clamp(1.6rem,4.6vw,3.6rem);line-height:1;text-transform:uppercase;white-space:nowrap;letter-spacing:-.01em}
+.strata-marquee .star{font-size:.6em;color:var(--strata-secondary);-webkit-text-stroke:0}
+.strata-marquee .ribbon--b .star{color:var(--strata-accent)}
+
+/* glow-bento: what's included, borders glow under the pointer */
+.strata-bento{background:#13232B;color:#fff}
+.strata-bento .eyebrow{color:var(--strata-secondary)}
+.strata-bento h2{color:#fff}
+.strata-bento .lede{color:#B5C2BD}
+.strata-bento .grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:14rem;gap:14px;margin-top:44px}
+.strata-bento .card{--mx:-999px;--my:-999px;position:relative;border-radius:20px;padding:1px;background:radial-gradient(420px circle at var(--mx) var(--my),var(--strata-secondary),transparent 45%),rgba(255,255,255,.1);opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1);transition-delay:calc(var(--d,0)*80ms)}
+.strata-bento .card.in{opacity:1;transform:none}
+.strata-bento .inner{position:relative;height:100%;border-radius:19px;padding:1.5rem;display:flex;flex-direction:column;justify-content:space-between;gap:1.2rem;overflow:hidden;background:radial-gradient(600px circle at var(--mx) var(--my),rgba(14,110,85,.28),transparent 40%),#1A2E37}
+.strata-bento h3{color:#fff;margin-bottom:.35rem}
+.strata-bento .inner p{color:#B5C2BD;font-size:.95rem;line-height:1.55}
+.strata-bento .wide{grid-column:span 2}
+.strata-bento .big{grid-column:span 2;grid-row:span 2}
+.strata-bento .stat{font-family:var(--display);font-size:clamp(3.4rem,8vw,6.5rem);font-weight:800;letter-spacing:-.05em;line-height:.9;background:linear-gradient(120deg,var(--strata-secondary),#7FC8A9);-webkit-background-clip:text;background-clip:text;color:transparent}
+.strata-bento .stat small{display:block;font-size:.28em;letter-spacing:0;margin-top:.4em}
+.strata-bento .bars{display:flex;align-items:end;gap:6px;height:5.5rem}
+.strata-bento .bars span{flex:1;border-radius:6px 6px 2px 2px;background:linear-gradient(to top,rgba(14,110,85,.6),var(--strata-secondary));height:var(--h)}
+.strata-bento .pills{display:flex;flex-wrap:wrap;gap:.5rem}
+.strata-bento .pills span{padding:.35rem .8rem;border-radius:999px;font-size:.8rem;border:1px solid rgba(255,255,255,.16);color:#fff}
+.strata-bento .pulse{width:4rem;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,#25D366,transparent 70%);animation:strata-pulse 2.4s ease-in-out infinite}
+@keyframes strata-pulse{50%{transform:scale(1.25);opacity:.6}}
+@media (max-width:900px){.strata-bento .grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.strata-bento .grid{grid-template-columns:1fr;grid-auto-rows:auto}.strata-bento .wide,.strata-bento .big{grid-column:auto;grid-row:auto}.strata-bento .inner{min-height:11rem}}
+@media (prefers-reduced-motion:reduce){.strata-bento .card{opacity:1;transform:none}}
 </style>
 </head>
 <body>
@@ -206,6 +263,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 </nav>
 
 <header class="hero" id="top">
+  <div class="orbs" aria-hidden="true"><span class="orb orb--1"></span><span class="orb orb--2"></span><span class="orb orb--3"></span></div>
   <div class="wrap">
     <div>
       <p class="eyebrow">Websites for South African businesses</p>
@@ -237,6 +295,21 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     </div>
   </div>
 </header>
+
+<section class="strata-marquee" data-strata="marquee-ribbon" aria-label="Who we build for">
+  <div class="ribbon ribbon--a" data-direction="-1"><div class="track">
+    <span class="item">Plumbers <span class="star" aria-hidden="true">✦</span></span>
+    <span class="item">Salons <span class="star" aria-hidden="true">✦</span></span>
+    <span class="item">Guesthouses <span class="star" aria-hidden="true">✦</span></span>
+    <span class="item">Builders <span class="star" aria-hidden="true">✦</span></span>
+    <span class="item">Mechanics <span class="star" aria-hidden="true">✦</span></span>
+  </div></div>
+  <div class="ribbon ribbon--b" data-direction="1" aria-hidden="true"><div class="track">
+    <span class="item">Live in 14 days <span class="star">●</span></span>
+    <span class="item">From R6,500 <span class="star">●</span></span>
+    <span class="item">We do all of it <span class="star">●</span></span>
+  </div></div>
+</section>
 
 <section id="how">
   <div class="wrap">
@@ -334,12 +407,40 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       <div class="chips">
         <span class="chip">Plumbers &amp; electricians</span><span class="chip">Salons &amp; barbers</span><span class="chip">Guesthouses &amp; B&amp;Bs</span><span class="chip">Builders &amp; contractors</span><span class="chip">Attorneys &amp; accountants</span><span class="chip">Restaurants &amp; caterers</span><span class="chip">Mechanics &amp; panelbeaters</span><span class="chip">Clinics &amp; practices</span>
       </div>
-      <div class="included">
-        <div><h3>Words that sell</h3><p>We write your pages around what your customers search for, not what sounds fancy.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="strata-bento" data-strata="glow-bento" id="included">
+  <div class="wrap">
+    <p class="eyebrow">What you get</p>
+    <h2 style="margin-top:12px">A website that works as hard as you do.</h2>
+    <p class="lede" style="margin-top:14px">Every Klaarwerk site comes with this, on every package.</p>
+    <div class="grid">
+      <article class="card big" style="--d:0"><div class="inner">
+        <div class="stat">14<small>days from deposit to launch</small></div>
+        <div><h3>Done for you</h3><p>One 30-minute call. We write the words, design the pages and put it online. You just approve it.</p></div>
+      </div></article>
+      <article class="card wide" style="--d:1"><div class="inner">
+        <div class="bars" aria-hidden="true"><span style="--h:28%"></span><span style="--h:46%"></span><span style="--h:38%"></span><span style="--h:62%"></span><span style="--h:58%"></span><span style="--h:80%"></span><span style="--h:100%"></span></div>
         <div><h3>Fast on mobile data</h3><p>Pages are kept light so they load quickly on a phone, even on a weak signal.</p></div>
-        <div><h3>Leads to your phone</h3><p>Every enquiry lands on WhatsApp or email, so you never miss a customer.</p></div>
+      </div></article>
+      <article class="card" style="--d:2"><div class="inner">
+        <div class="pulse" aria-hidden="true"></div>
+        <div><h3>Leads to your phone</h3><p>Enquiries land on WhatsApp or email.</p></div>
+      </div></article>
+      <article class="card" style="--d:3"><div class="inner">
+        <div class="pills"><span>Services</span><span>Areas</span><span>Prices</span></div>
+        <div><h3>Words that sell</h3><p>Written around what customers search for.</p></div>
+      </div></article>
+      <article class="card wide" style="--d:4"><div class="inner">
         <div><h3>You own it</h3><p>The domain and website are registered in your name. You're never locked in.</p></div>
-      </div>
+        <div class="pills"><span>.co.za domain</span><span>Your name</span><span>Your content</span></div>
+      </div></article>
+      <article class="card wide" style="--d:5"><div class="inner">
+        <div><h3>Google-ready</h3><p>We set up your site and Google Business Profile so customers can find you when they search.</p></div>
+        <div class="pills"><span>Google Business Profile</span><span>WhatsApp button</span></div>
+      </div></article>
     </div>
   </div>
 </section>
@@ -457,6 +558,51 @@ if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
     el.textContent = words[w].slice(0, Math.max(0, Math.min(i, words[w].length)));
   }, 110);
 }
+
+/* OpenStrata marquee-ribbon: base speed + decaying scroll boost; paused off-screen, hidden tab or reduced motion */
+(() => {
+  const section = document.querySelector('[data-strata="marquee-ribbon"]');
+  if (!section) return;
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)');
+  const BASE = 55;
+  const rows = [...section.querySelectorAll('.ribbon')].map(ribbon => {
+    const track = ribbon.querySelector('.track');
+    const orig = [...track.children];
+    while (track.scrollWidth < ribbon.clientWidth * 1.2) orig.forEach(n => track.append(n.cloneNode(true)));
+    [...track.children].forEach(n => { const c = n.cloneNode(true); c.setAttribute('aria-hidden','true'); track.append(c); });
+    return { ribbon, track, dir: Number(ribbon.dataset.direction), off: 0, w: track.scrollWidth / 2 };
+  });
+  let boost = 0, lastY = scrollY, frame = 0, visible = false, last = performance.now();
+  addEventListener('scroll', () => { boost = Math.min(boost + Math.abs(scrollY - lastY) * 6, 1600); lastY = scrollY; }, { passive: true });
+  addEventListener('resize', () => rows.forEach(r => { r.w = r.track.scrollWidth / 2; }));
+  function tick(now) {
+    frame = 0; const dt = Math.min(now - last, 50) / 1000; last = now; boost *= 0.92;
+    for (const r of rows) { r.off = (r.off + (BASE + boost) * dt) % r.w; const x = r.dir < 0 ? -r.off : r.off - r.w; r.track.style.transform = `translate3d(${x}px,0,0)`; }
+    schedule();
+  }
+  function schedule() {
+    const run = visible && !document.hidden && !reduce.matches;
+    if (run && !frame) { last = performance.now(); frame = requestAnimationFrame(tick); }
+    else if (!run && frame) { cancelAnimationFrame(frame); frame = 0; }
+  }
+  new IntersectionObserver(([e]) => { visible = e.isIntersecting; schedule(); }).observe(section);
+  document.addEventListener('visibilitychange', schedule);
+  reduce.addEventListener('change', schedule);
+})();
+
+/* OpenStrata glow-bento: pointer glow shared across cards + reveal on scroll */
+(() => {
+  const grid = document.querySelector('[data-strata="glow-bento"] .grid');
+  if (!grid) return;
+  const cards = [...grid.querySelectorAll('.card')];
+  let pending = null;
+  grid.addEventListener('pointermove', e => { if (!pending) requestAnimationFrame(paint); pending = { x: e.clientX, y: e.clientY }; });
+  grid.addEventListener('pointerleave', () => cards.forEach(c => { c.style.setProperty('--mx','-999px'); c.style.setProperty('--my','-999px'); }));
+  function paint() { if (!pending) return; const { x, y } = pending; pending = null;
+    for (const c of cards) { const r = c.getBoundingClientRect(); c.style.setProperty('--mx', `${x - r.left}px`); c.style.setProperty('--my', `${y - r.top}px`); } }
+  const io = new IntersectionObserver(([e]) => { if (e.isIntersecting) { cards.forEach(c => c.classList.add('in')); io.disconnect(); } }, { threshold: 0.05 });
+  io.observe(grid);
+})();
 </script>
 
 </body>
