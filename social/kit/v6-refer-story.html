@@ -1,0 +1,48 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="common.css">
+<style>
+/* Story: keep text out of the top 260px and bottom 320px (Instagram/Facebook UI) */
+.s1{background:var(--sun);padding:380px 90px 0}
+.s1 h1{font-size:150px}
+.s2{background:var(--ground);padding:330px 90px 0}
+.s2 h2{font-size:92px}
+.rows{margin-top:70px;display:flex;flex-direction:column;gap:30px}
+.row{display:flex;gap:30px;align-items:center;background:#fff;border-radius:34px;padding:34px 38px;box-shadow:0 20px 40px -28px rgba(0,0,0,.35)}
+.row .n{flex:none;width:96px;height:96px;border-radius:50%;background:var(--green);color:#fff;display:grid;place-items:center;font:800 48px 'Bricolage Grotesque'}
+.row b{display:block;font-size:52px;line-height:1.1}
+.row small{display:block;font-size:36px;color:var(--muted);margin-top:6px}
+.money{position:absolute;left:90px;right:90px;top:1300px;text-align:center}
+.money .disp{font-size:230px;color:var(--green)}
+.coin{position:absolute;font-size:90px}
+</style></head><body><div class="stage">
+
+<section class="scene s1" data-in="0" data-out="3.3" data-din="0.01" data-fx="none">
+  <p class="mono a" data-in="0.05" style="font-size:40px;margin:0 0 40px">Refer &amp; earn</p>
+  <h1 class="disp"><span class="a" style="display:block" data-in="0.15">Know a</span><span class="a" style="display:block" data-in="0.45">business</span><span class="a" style="display:block" data-in="0.75">with no</span><span class="a" style="display:block" data-in="1.05" data-fx="pop"><span class="hlbox" style="background:#fff">website?</span></span></h1>
+  <p class="a" data-in="1.8" style="font-size:52px;margin-top:70px;font-weight:600">Send them our way.<br>We'll pay you for it.</p>
+</section>
+
+<section class="scene s2" data-in="3.3" data-out="10.2" data-din="0.01" data-fx="none">
+  <h2 class="disp a" data-in="3.4">It's this simple:</h2>
+  <div class="rows">
+    <div class="row a" data-in="3.9" data-fx="right"><span class="n">1</span><div><b>Send us their name and number</b><small>On WhatsApp, or tell them to mention you</small></div></div>
+    <div class="row a" data-in="5.0" data-fx="right"><span class="n">2</span><div><b>We build their website</b><small>Done for them in 14 days</small></div></div>
+    <div class="row a" data-in="6.1" data-fx="right"><span class="n">3</span><div><b>You get paid</b><small>By EFT, once their site is paid in full</small></div></div>
+  </div>
+  <div class="money a" data-in="7.0" data-fx="pop"><div class="disp">R<span id="amt">0</span></div><p style="font-size:44px;font-weight:600;margin:0">per business. No limit.</p></div>
+</section>
+
+<section class="scene cta" data-in="10.2" data-din="0.01" data-fx="none" style="padding-top:120px">
+  <img class="a" data-in="10.3" src="img/klaarwerk-logo-white.png" style="width:600px">
+  <p class="disp a" data-in="10.55" style="font-size:96px">Refer &amp; earn <span class="hlbox">R500</span></p>
+  <p class="a" data-in="10.8" style="font-size:46px;margin:0;opacity:.9">for every business you send our way</p>
+  <div class="pill a" data-in="11.1" data-fx="pop">WhatsApp 066 205 4680</div>
+  <p class="mono a" data-in="11.4" style="font-size:34px;margin:0;color:var(--mint);text-transform:none">tinyurl.com/Klaarwerk · @klaarwerk.media</p>
+</section>
+
+</div><script>
+window.custom = (t) => {
+  const p = Math.max(0, Math.min(1, (t - 7.1) / 1.4));
+  const e = 1 - Math.pow(1 - p, 3);
+  document.getElementById('amt').textContent = Math.round(e * 500);
+};
+</script><script src="engine.js"></script></body></html>
