@@ -244,6 +244,20 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 @media (max-width:900px){.strata-bento .grid{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:560px){.strata-bento .grid{grid-template-columns:1fr;grid-auto-rows:auto}.strata-bento .wide,.strata-bento .big{grid-column:auto;grid-row:auto}.strata-bento .inner{min-height:11rem}}
 @media (prefers-reduced-motion:reduce){.strata-bento .card{opacity:1;transform:none}}
+
+/* referral */
+.refer{background:var(--sun);color:var(--sun-ink)}
+.refer .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,64px);align-items:center}
+.refer .eyebrow{color:var(--sun-ink)}
+.refer .big{font-family:var(--display);font-weight:800;font-size:clamp(4rem,11vw,8rem);letter-spacing:-.05em;line-height:.9}
+.refer .big small{display:block;font-size:.22em;letter-spacing:0;font-weight:700;margin-top:.5em}
+.refer ol{margin:22px 0 0;padding:0;list-style:none;display:grid;gap:14px;counter-reset:r}
+.refer li{display:flex;gap:14px;align-items:flex-start;background:rgba(255,255,255,.55);border-radius:14px;padding:14px 16px;counter-increment:r}
+.refer li::before{content:counter(r);flex:none;width:30px;height:30px;border-radius:50%;background:#13232B;color:#fff;display:grid;place-items:center;font:800 .95rem var(--display)}
+.refer .fine{font-size:.88rem;margin-top:16px;opacity:.85}
+.refer .fine a{color:inherit}
+.refer .btn-dark{background:#13232B;color:#fff;margin-top:24px}
+@media (max-width:900px){.refer .wrap{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -256,6 +270,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       <a href="#how">How it works</a>
       <a href="#work">Examples</a>
       <a href="#pricing">Pricing</a>
+      <a href="#refer">Refer &amp; earn</a>
       <a href="#faq">FAQ</a>
     </div>
     <a class="btn btn-primary" href="#brief">Get a quote</a>
@@ -445,6 +460,25 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   </div>
 </section>
 
+<section class="refer" id="refer">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Refer &amp; earn</p>
+      <div class="big" style="margin-top:12px">R500<small>for every business you send our way</small></div>
+    </div>
+    <div>
+      <h2>Know a business that needs a website?</h2>
+      <ol>
+        <li><span>Tell the business owner about Klaarwerk and ask them to mention your name when they contact us.</span></li>
+        <li><span>Or send us their name and number on WhatsApp, and let them know we'll be in touch.</span></li>
+        <li><span>When their website is paid in full, we pay you R500 by EFT. No limit on how many you refer.</span></li>
+      </ol>
+      <p class="fine">Anyone can refer: clients, friends, accountants, printers, signwriters. The business must be new to us. See the <a href="terms.html#referrals">referral terms</a>.</p>
+      <a class="btn btn-dark" id="referBtn" href="#">Refer a business on WhatsApp</a>
+    </div>
+  </div>
+</section>
+
 <section id="faq">
   <div class="wrap">
     <p class="eyebrow">Questions</p>
@@ -455,6 +489,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       <details><summary>How do I pay?</summary><p>EFT into our business account. 50% deposit starts the work, and the other 50% is paid when you approve the final site, before it goes live.</p></details>
       <details><summary>What if I don't like the design?</summary><p>Two rounds of changes are included. Most clients only need one. Bigger changes after that are quoted upfront before we do them.</p></details>
       <details><summary>What if I change my mind?</summary><p>The 50% deposit is non-refundable once we've started work, because we start writing and designing straight away. The full terms are <a href="terms.html">here</a>.</p></details>
+      <details><summary>Do you pay for referrals?</summary><p>Yes. If you send us a business and they become a client, we pay you R500 by EFT once their website is paid in full. See <a href="#refer">Refer &amp; earn</a>.</p></details>
       <details><summary>Do you work outside Gauteng?</summary><p>Yes. Everything happens online and on WhatsApp, so we build for businesses anywhere in South Africa.</p></details>
       <details><summary>Will I show up on Google?</summary><p>We set up your site and Google Business Profile so Google can find and list you. Ranking takes time and depends on competition, so we don't promise a position. Anyone who guarantees "page one" is guessing.</p></details>
     </div>
@@ -477,6 +512,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       <div class="field"><label for="f-type">What you do</label><input id="f-type" name="type" placeholder="Plumbing, Benoni"></div>
       <div class="field"><label for="f-plan">Package</label>
         <select id="f-plan" name="plan"><option>Not sure yet</option><option>Starter</option><option>Business</option><option>Online Store</option></select></div>
+      <div class="field full"><label for="f-ref">Referred by someone? (optional)</label><input id="f-ref" name="ref" placeholder="Their name, so we can thank them"></div>
       <div class="field full"><label for="f-note">Anything else?</label><textarea id="f-note" name="note" placeholder="Do you have a logo? A Facebook page? When do you want to go live?"></textarea></div>
       <div class="form-actions">
         <button class="btn btn-primary" type="submit">Send on WhatsApp</button>
@@ -517,6 +553,7 @@ function message(){
     "What we do: " + (val("f-type") || "—"),
     "Package: " + val("f-plan")
   ];
+  if (val("f-ref")) lines.push("Referred by: " + val("f-ref"));
   if (val("f-note")) lines.push("", val("f-note"));
   return lines.join("\n");
 }
@@ -545,6 +582,10 @@ document.getElementById("copyBtn").addEventListener("click", () => {
     navigator.clipboard.writeText(text).then(() => status.textContent = "Copied. Paste it into WhatsApp.", fallback);
   } catch (err) { fallback(); }
 });
+
+/* Referral WhatsApp link */
+document.getElementById("referBtn").href = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent("Hi Klaarwerk, I'd like to refer a business for a website.\n\nBusiness name: \nOwner's name and number: \nMy name: ");
+document.getElementById("referBtn").target = "_blank";
 
 /* Typing effect in the hero URL bar */
 const words = ["yourbusiness","mokoenaplumbing","glowsalon","karooguesthouse"];
