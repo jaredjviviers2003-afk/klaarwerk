@@ -246,6 +246,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 @media (prefers-reduced-motion:reduce){.strata-bento .card{opacity:1;transform:none}}
 
 /* referral */
+.founding{display:flex;flex-wrap:wrap;gap:16px 28px;align-items:center;justify-content:space-between;background:var(--ink,#13232B);color:#fff;border-radius:20px;padding:22px 26px;margin:0 0 28px}
+.founding .f-badge{display:inline-block;background:var(--sun);color:var(--sun-ink);font:700 .78rem var(--body);letter-spacing:.08em;text-transform:uppercase;border-radius:999px;padding:4px 12px}
+.founding h3{color:#fff;margin:10px 0 4px;font-size:clamp(1.3rem,2.6vw,1.7rem)}
+.founding h3 s{opacity:.55;font-weight:600}
+.founding p{margin:0;color:#C9D6D0;max-width:56ch}
 .refer{background:var(--sun);color:var(--sun-ink)}
 .refer .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,64px);align-items:center}
 .refer .eyebrow{color:var(--sun-ink)}
@@ -360,6 +365,14 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <h2 style="margin-top:12px">One price. No surprises.</h2>
       </div>
       <p class="lede" style="max-width:42ch">All prices in rand. 50% deposit to start, 50% when you're happy and the site goes live.</p>
+    </div>
+    <div class="founding" id="founding">
+      <div>
+        <span class="f-badge">Founding client offer &middot; 3 spots</span>
+        <h3>Starter website for R4,500 <s>R6,500</s></h3>
+        <p>We're new, so our first 3 clients get R2,000 off. In return, you leave us an honest Google review, give us a short testimonial, and let us show your site as our work. Same 14 days, same quality.</p>
+      </div>
+      <a class="btn btn-sun" id="foundingBtn" href="#">Claim a spot on WhatsApp</a>
     </div>
     <div class="plans">
       <div class="plan">
@@ -489,6 +502,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       <details><summary>How do I pay?</summary><p>By EFT. When you say yes, we email you an invoice with our bank details. Pay the 50% deposit using the invoice number as your reference, and we start as soon as it clears. The other 50% is paid when you approve the final site, before it goes live. We will never change our bank details by email or WhatsApp, so if anyone asks you to pay a different account, phone us first on 066 205 4680.</p></details>
       <details><summary>What if I don't like the design?</summary><p>Two rounds of changes are included. Most clients only need one. Bigger changes after that are quoted upfront before we do them.</p></details>
       <details><summary>What if I change my mind?</summary><p>The 50% deposit is non-refundable once we've started work, because we start writing and designing straight away. The full terms are <a href="terms.html">here</a>.</p></details>
+      <details><summary>What is the founding client offer?</summary><p>Our first 3 clients get the Starter website for R4,500 instead of R6,500. In return, you leave an honest Google review, give us a short testimonial, and let us show your site as an example of our work. Everything else is the same: 14 days, 50% deposit, and you own the site. See the <a href="terms.html#founding">terms</a>.</p></details>
       <details><summary>Do you pay for referrals?</summary><p>Yes. If you send us a business and they become a client, we pay you R500 by EFT once their website is paid in full. See <a href="#refer">Refer &amp; earn</a>.</p></details>
       <details><summary>Do you work outside Gauteng?</summary><p>Yes. Everything happens online and on WhatsApp, so we build for businesses anywhere in South Africa.</p></details>
       <details><summary>Will I show up on Google?</summary><p>We set up your site and Google Business Profile so Google can find and list you. Ranking takes time and depends on competition, so we don't promise a position. Anyone who guarantees "page one" is guessing.</p></details>
@@ -586,6 +600,8 @@ document.getElementById("copyBtn").addEventListener("click", () => {
 /* Referral WhatsApp link */
 document.getElementById("referBtn").href = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent("Hi Klaarwerk, I'd like to refer a business for a website.\n\nBusiness name: \nOwner's name and number: \nMy name: ");
 document.getElementById("referBtn").target = "_blank";
+document.getElementById("foundingBtn").href = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent("Hi Klaarwerk, I'd like one of the founding client spots (Starter website for R4,500).\n\nBusiness name: \nWhat we do: \nTown: ");
+document.getElementById("foundingBtn").target = "_blank";
 
 /* Typing effect in the hero URL bar */
 const words = ["yourbusiness","mokoenaplumbing","glowsalon","karooguesthouse"];
