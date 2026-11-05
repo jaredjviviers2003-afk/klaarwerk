@@ -3,4 +3,4 @@ Allow: /
 Disallow: /outreach/
 Disallow: /social/
 Disallow: /demos/
-Sitemap: https://jaredjviviers2003-afk.github.io/klaarwerk/sitemap.xml
+Sitemap: https://klaarwerk.co.za/sitemap.xml

@@ -15,7 +15,7 @@ PACKAGES = {
     "Business": (12500, "Up to 10 pages, everything in Starter, quote or booking form, Google Business Profile setup, local SEO, professional email address"),
     "Online Store": (22000, "Up to 50 products loaded, card and EFT payments, courier options, order notifications to WhatsApp, training call"),
 }
-TERMS_URL = "jaredjviviers2003-afk.github.io/klaarwerk/terms.html"
+TERMS_URL = "klaarwerk.co.za/terms.html"
 
 
 def b64(p):
