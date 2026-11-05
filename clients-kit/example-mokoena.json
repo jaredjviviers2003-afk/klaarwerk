@@ -1,0 +1,42 @@
+{
+  "business": "Mokoena Plumbing & Gas",
+  "owner": "Mr Thabo Mokoena",
+  "salutation": "Mr Mokoena",
+  "area": "Delmas, Mpumalanga",
+  "email": "",
+  "date": "3 November 2026",
+  "valid_until": "3 December 2026",
+  "package": "Business",
+  "quote_no": "KWQ-2026-001",
+  "foot_note": "<br>Example documents for an imaginary client.",
+  "letter_intro": [
+    "Thank you for chatting with me on the phone yesterday. I'm Jared, and I run Klaarwerk Studio here in Delmas. We build websites for small businesses, done for you and live in 14 days, so you can keep running your business while we handle the online side.",
+    "You mentioned that most of your work comes from word of mouth. That's a great sign: people trust you. A proper website lets the people who don't know you yet find you on Google and call you, instead of the next plumber on the list."
+  ],
+  "found": [
+    "When I searched \"plumber in Delmas\" on Google, Mokoena Plumbing & Gas didn't appear on the first page.",
+    "Your Facebook page has great photos and good reviews, but Google doesn't show Facebook pages well, and new customers can't see your services or call-out fee at a glance.",
+    "There's no quick way for a customer with a burst pipe at 7 am to WhatsApp you with one tap."
+  ],
+  "propose": [
+    "Show up on Google when people in Delmas, Eloff and Bronkhorstspruit search for a plumber or gas installer",
+    "Work perfectly on phones and load fast, even on mobile data",
+    "Let customers WhatsApp or call you in one tap, day or night",
+    "Explain your services (leaks, geysers, blocked drains, gas installations and COCs) in clear words, written by us",
+    "Show your best Facebook photos and the reviews your customers already wrote"
+  ],
+  "why": "The quote form sends new jobs straight to your phone, and the Google Business Profile setup puts you on Google Maps when people search for a plumber nearby.",
+  "pages": "Up to 10 pages: Home, About, Services, Geysers, Leaks & drains, Gas installations & COCs, Service areas, Reviews, Gallery, Contact. Mobile-first design with WhatsApp and call buttons.",
+  "included": [
+    ["Copywriting", "All website words written for you after one 30-minute call.", "Included"],
+    ["Quote request form", "Customers send job details and photos; leads arrive on your phone.", "Included"],
+    ["Google Business Profile setup + local SEO", "Delmas, Eloff and Bronkhorstspruit, so you show on Google Search and Maps.", "Included"],
+    ["Domain name: mokoenaplumbing.co.za", "First year included. Renewal about R100/year after that, paid to the registrar.", "Included"],
+    ["Professional email address", "For example, thabo@mokoenaplumbing.co.za", "Included"]
+  ],
+  "invoices": {
+    "deposit": {"no": "KW-2026-001", "date": "5 November 2026", "due": "8 November 2026"},
+    "balance": {"no": "KW-2026-002", "date": "[on approval]", "due": "[2 days after approval]"}
+  },
+  "bank": {}
+}
