@@ -1,24 +1,29 @@
-checked: Thu Nov  5 17:59:02 UTC 2026
+checked: Thu Nov  5 18:00:10 UTC 2026
 == klaarwerk.co.za A
-185.199.111.153
-185.199.109.153
-185.199.110.153
 185.199.108.153
+185.199.110.153
+185.199.109.153
+185.199.111.153
 == klaarwerk.co.za CNAME
 == www.klaarwerk.co.za A
 jaredjviviers2003-afk.github.io.
-185.199.111.153
 185.199.108.153
-185.199.110.153
 185.199.109.153
+185.199.110.153
+185.199.111.153
 == www.klaarwerk.co.za CNAME
 jaredjviviers2003-afk.github.io.
 == NS
 ns39.domaincontrol.com.
 ns40.domaincontrol.com.
-== http head
-HTTP/1.1 404 Not Found
+== http klaarwerk.co.za
+HTTP/1.1 200 OK
 Connection: keep-alive
-Content-Length: 9115
+Content-Length: 51365
 Server: GitHub.com
-Content-Type: text/html; charset=utf-8
+== https klaarwerk.co.za
+200 0
+<title>Klaarwerk Studio
+== old github.io link
+HTTP/2 301 
+location: http://klaarwerk.co.za/
