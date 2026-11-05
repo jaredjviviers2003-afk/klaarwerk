@@ -1,0 +1,7 @@
+checked: Thu Nov  5 16:50:34 UTC 2026
+== klaarwerk.co.za A
+== klaarwerk.co.za CNAME
+== www.klaarwerk.co.za A
+== www.klaarwerk.co.za CNAME
+== NS
+== http head
