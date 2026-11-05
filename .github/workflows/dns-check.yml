@@ -1,0 +1,27 @@
+name: dns-check
+on:
+  push:
+    branches: [dns-check]
+permissions:
+  contents: write
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Look up DNS and fetch site
+        run: |
+          {
+            echo "checked: $(date -u)"
+            for h in klaarwerk.co.za www.klaarwerk.co.za; do
+              echo "== $h A";     dig +short $h A @8.8.8.8
+              echo "== $h CNAME"; dig +short $h CNAME @8.8.8.8
+            done
+            echo "== NS"; dig +short klaarwerk.co.za NS @8.8.8.8
+            echo "== http head"; curl -sI --max-time 15 http://klaarwerk.co.za | head -5
+          } > dns-result.txt 2>&1
+          cat dns-result.txt
+      - name: Save result
+        run: |
+          git config user.name "dns-check"; git config user.email "dns-check@users.noreply.github.com"
+          git add dns-result.txt; git commit -m "dns result [skip ci]" || true; git push
