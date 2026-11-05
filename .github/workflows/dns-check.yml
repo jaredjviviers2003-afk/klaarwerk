@@ -18,7 +18,9 @@ jobs:
               echo "== $h CNAME"; dig +short $h CNAME @8.8.8.8
             done
             echo "== NS"; dig +short klaarwerk.co.za NS @8.8.8.8
-            echo "== http head"; curl -sI --max-time 15 http://klaarwerk.co.za | head -5
+            echo "== http klaarwerk.co.za"; curl -sI --max-time 15 http://klaarwerk.co.za | head -4
+            echo "== https klaarwerk.co.za"; curl -s --max-time 15 -o /tmp/p.html -w "%{http_code} %{ssl_verify_result}\n" https://klaarwerk.co.za/ || echo "https failed"; grep -o "<title>[^<]*" /tmp/p.html | head -1
+            echo "== old github.io link"; curl -sI --max-time 15 https://jaredjviviers2003-afk.github.io/klaarwerk/ | grep -iE "^(HTTP|location)"
           } > dns-result.txt 2>&1
           cat dns-result.txt
       - name: Save result
