@@ -123,7 +123,7 @@ def letter(c):
 <h2 class="pb">How it works</h2>{STEPS}
 <h2>Investment</h2>
 <table><tr><th>Package</th><th>What's included</th><th class=r>Once-off</th></tr>{rows}</table>
-<p class="note" style="margin-top:6px">Optional Care Plan: R250/month for hosting, security updates, backups and up to 1 hour of changes each month. Cancel any time.</p>
+<p class="note" style="margin-top:6px">Optional Care Plan: R450/month for hosting, security updates, backups and up to 1 hour of changes each month. Cancel any time.</p>
 <p>For {E(c['business'])}, I recommend the <b>{pk}</b> package. {E(c['why'])} Your deposit would be <b>{rand0(price/2)}</b>, and the other {rand0(price/2)} is only due once you've approved the site. You own the website and domain. The full quote is attached as <b>{E(c['quote_no'])}</b>.</p>
 <div class="cta"><b>Would you like a free mock-up of your new homepage first?</b><br><span>Just reply YES, or WhatsApp me on 066 205 4680.</span></div>
 <p style="margin:0 0 4px">Kind regards,</p>
@@ -146,7 +146,7 @@ def quote(c):
 <table class="tot"><tr><td style="width:58%"></td><td>Subtotal</td><td class=r>{rand(price)}</td></tr>
 <tr class="grand"><td style="background:#fff"></td><td>Total, once-off</td><td class=r>{rand(price)}</td></tr></table>
 <h2>Optional extra</h2>
-<table><tr><td><b>Care Plan</b><small>Hosting, security updates, backups and up to 1 hour of changes every month. Cancel any time.</small></td><td class=r>R250.00 / month</td></tr></table>
+<table><tr><td><b>Care Plan</b><small>Hosting, security updates, backups and up to 1 hour of changes every month. Cancel any time.</small></td><td class=r>R450.00 / month</td></tr></table>
 <h2 class="pb">Payment</h2>
 <div class="pay"><div><small>To start</small><b>{rand(price/2)}</b><br>50% deposit by EFT</div><div><small>When you approve the site</small><b>{rand(price/2)}</b><br>50% balance, before it goes live</div></div>
 <p class="note">Banking details are on your invoice. We will never change our bank details by email or WhatsApp. If anyone asks you to pay a different account, phone us first on 066 205 4680.</p>
