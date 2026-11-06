@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="af">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Delmas Saad en Produkte | Saad, Afrox gas en plaasprodukte in Delmas</title>
+<meta name="description" content="Konsepvoorskou van 'n nuwe webwerf vir Delmas Saad en Produkte, gemaak deur Klaarwerk Studio.">
+<link rel="icon" href="delmas-saad/logo.png">
+<!-- strata:fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Hanken+Grotesk:wght@400..700&display=swap" rel="stylesheet">
+<!-- /strata:fonts -->
+<style>
+/* strata:tokens */
+:root{
+  --strata-bg:#F5EFDF;
+  --strata-surface:#FFFCF4;
+  --strata-text:#1C2A1A;
+  --strata-muted:#5C6553;
+  --strata-primary:#1F6B35;
+  --strata-secondary:#C8952A;
+  --strata-accent:#E7B648;
+  --strata-font-display:"Bricolage Grotesque",system-ui,sans-serif;
+  --strata-font-body:"Hanken Grotesk",system-ui,sans-serif;
+}
+/* /strata:tokens */
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--strata-bg);color:var(--strata-text);font-family:var(--strata-font-body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{width:min(1180px,100% - 32px);margin-inline:auto}
+h1,h2,h3{font-family:var(--strata-font-display);letter-spacing:-.03em;line-height:1;margin:0}
+h2{font-size:clamp(2.1rem,5vw,3.6rem);font-weight:700}
+.eyebrow{font-weight:700;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--strata-primary);display:inline-flex;gap:.5rem;align-items:center}
+.eyebrow::before{content:"";width:22px;height:2px;background:var(--strata-secondary)}
+.muted{color:var(--strata-muted)}
+.btn{display:inline-flex;align-items:center;gap:.55rem;padding:.95rem 1.4rem;border-radius:999px;font-weight:700;text-decoration:none;border:2px solid transparent;transition:transform .2s,background .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-green{background:var(--strata-primary);color:#fff}
+.btn-gold{background:var(--strata-accent);color:var(--strata-text)}
+.btn-line{border-color:color-mix(in srgb,var(--strata-text) 25%,transparent)}
+.btn svg{width:20px;height:20px}
+
+/* demo bar */
+.demobar{background:#FFE14D;color:#1a1a1a;font-size:.85rem;text-align:center;padding:.55rem 16px;font-weight:600}
+.demobar a{font-weight:800}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--strata-bg) 88%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid color-mix(in srgb,var(--strata-text) 8%,transparent)}
+.nav .wrap{display:flex;align-items:center;gap:1.2rem;height:72px}
+.brand{display:flex;align-items:center;gap:.7rem;text-decoration:none;font-family:var(--strata-font-display);font-weight:800;line-height:1.05;font-size:1.05rem}
+.brand img{width:48px;height:48px}
+.brand small{display:block;font-weight:600;font-size:.72rem;color:var(--strata-muted);letter-spacing:.06em;text-transform:uppercase}
+.nav nav{margin-left:auto;display:flex;gap:1.4rem}
+.nav nav a{text-decoration:none;font-weight:600;font-size:.95rem;color:var(--strata-muted)}
+.nav nav a:hover{color:var(--strata-text)}
+.lang{display:flex;border:1px solid color-mix(in srgb,var(--strata-text) 18%,transparent);border-radius:999px;overflow:hidden}
+.lang button{background:none;border:0;font:inherit;font-weight:700;font-size:.8rem;padding:.4rem .7rem;cursor:pointer;color:var(--strata-muted)}
+.lang button[aria-pressed=true]{background:var(--strata-text);color:var(--strata-bg)}
+.nav .btn{padding:.6rem 1.1rem;font-size:.9rem}
+@media(max-width:900px){.nav nav{display:none}.nav .lang{margin-left:auto}}
+@media(max-width:520px){.nav .btn{display:none}.brand small{display:none}}
+
+/* hero: grain-orbs */
+.strata-grain-orbs{position:relative;overflow:hidden;isolation:isolate;background:var(--strata-bg);padding:72px 0 88px}
+.strata-grain-orbs .orbs{position:absolute;inset:0;z-index:-2;filter:blur(70px) saturate(1.2)}
+.strata-grain-orbs .orb{position:absolute;border-radius:50%;opacity:.55;mix-blend-mode:multiply}
+.strata-grain-orbs .orb--1{width:42vmax;height:42vmax;left:-12vmax;top:-14vmax;background:var(--strata-primary);opacity:.35;animation:strata-orbit-1 22s ease-in-out infinite alternate}
+.strata-grain-orbs .orb--2{width:36vmax;height:36vmax;right:-8vmax;top:6vmax;background:var(--strata-secondary);animation:strata-orbit-2 26s ease-in-out infinite alternate}
+.strata-grain-orbs .orb--3{width:28vmax;height:28vmax;left:30vw;bottom:-16vmax;background:var(--strata-accent);animation:strata-orbit-3 19s ease-in-out infinite alternate}
+.strata-grain-orbs::after{content:"";position:absolute;inset:-50%;z-index:-1;opacity:.18;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.6 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");animation:strata-grain 1.2s steps(6) infinite}
+@keyframes strata-orbit-1{to{transform:translate(18vw,14vh) scale(1.1)}}
+@keyframes strata-orbit-2{to{transform:translate(-22vw,18vh) scale(.9)}}
+@keyframes strata-orbit-3{to{transform:translate(14vw,-24vh) scale(1.2)}}
+@keyframes strata-grain{0%{transform:translate(0,0)}20%{transform:translate(-3%,2%)}40%{transform:translate(2%,-3%)}60%{transform:translate(-2%,-1%)}80%{transform:translate(3%,3%)}100%{transform:translate(0,0)}}
+.hero-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:3rem;align-items:center}
+.badge{display:inline-flex;gap:.5rem;align-items:center;padding:.45rem .95rem;border-radius:999px;background:color-mix(in srgb,var(--strata-surface) 75%,transparent);border:1px solid color-mix(in srgb,var(--strata-text) 10%,transparent);font-size:.85rem;font-weight:600;color:var(--strata-muted);backdrop-filter:blur(8px)}
+.badge b{color:var(--strata-primary)}
+.hero h1{font-size:clamp(2.8rem,7vw,5.6rem);font-weight:800;letter-spacing:-.045em;line-height:.95;margin:1.2rem 0 1.2rem}
+.hero h1 em{font-style:normal;color:var(--strata-primary);position:relative;white-space:nowrap}
+.hero h1 em::after{content:"";position:absolute;left:0;right:0;bottom:.04em;height:.16em;background:var(--strata-accent);z-index:-1;border-radius:4px}
+.hero .lede{font-size:1.18rem;color:var(--strata-muted);max-width:33rem;margin:0 0 2rem}
+.hero .cta{display:flex;gap:.8rem;flex-wrap:wrap}
+.hero-art{position:relative}
+.hero-art .frame{background:var(--strata-surface);border-radius:28px;padding:14px;border:1px solid color-mix(in srgb,var(--strata-text) 8%,transparent);box-shadow:0 30px 60px -30px rgba(40,50,20,.35);transform:rotate(1.5deg)}
+.hero-art .frame img{border-radius:18px;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;background:#f3e8c9}
+.hero-art .sticker{position:absolute;left:-22px;bottom:-26px;background:var(--strata-primary);color:#fff;border-radius:20px;padding:1rem 1.2rem;font-family:var(--strata-font-display);transform:rotate(-4deg);box-shadow:0 18px 30px -18px rgba(0,0,0,.5)}
+.hero-art .sticker b{display:block;font-size:2.2rem;line-height:1;color:var(--strata-accent)}
+.hero-art .sticker span{font-size:.85rem;font-weight:600}
+.facts{display:flex;gap:2rem;flex-wrap:wrap;margin-top:2.4rem;padding-top:1.6rem;border-top:1px solid color-mix(in srgb,var(--strata-text) 12%,transparent)}
+.facts div{font-size:.88rem;color:var(--strata-muted)}
+.facts b{display:block;font-family:var(--strata-font-display);font-size:1.6rem;color:var(--strata-text);letter-spacing:-.02em}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr}.hero-art{max-width:560px}.strata-grain-orbs{padding:44px 0 70px}}
+
+/* marquee-ribbon */
+.strata-marquee{position:relative;padding:5vh 0 7vh;overflow:hidden;display:grid}
+.strata-marquee .ribbon{width:110vw;margin-left:-5vw;padding:1.1rem 0;overflow:hidden;user-select:none}
+.strata-marquee .ribbon--a{background:var(--strata-primary);color:var(--strata-bg);transform:rotate(-2deg);z-index:1}
+.strata-marquee .ribbon--b{background:var(--strata-text);color:transparent;-webkit-text-stroke:1.5px var(--strata-accent);transform:rotate(1.5deg);margin-top:-.8rem}
+.strata-marquee .track{display:flex;width:max-content;will-change:transform}
+.strata-marquee .item{display:inline-flex;align-items:center;gap:2rem;padding-right:2rem;font-family:var(--strata-font-display);font-weight:800;font-size:clamp(1.6rem,4.4vw,3.4rem);line-height:1;text-transform:uppercase;white-space:nowrap}
+.strata-marquee .star{font-size:.6em;color:var(--strata-accent);-webkit-text-stroke:0}
+
+section.block{padding:96px 0}
+.head{display:flex;justify-content:space-between;align-items:end;gap:2rem;flex-wrap:wrap;margin-bottom:3rem}
+.head p{max-width:30rem;margin:0}
+.head h2{margin-top:.8rem}
+
+/* services numbered list */
+.svc{list-style:none;margin:0;padding:0;border-top:1px solid color-mix(in srgb,var(--strata-text) 15%,transparent)}
+.svc li{display:grid;grid-template-columns:80px 1fr 1.2fr;gap:1.5rem;padding:1.8rem 0;border-bottom:1px solid color-mix(in srgb,var(--strata-text) 15%,transparent);align-items:baseline;transition:background .3s,padding .3s}
+.svc li:hover{background:color-mix(in srgb,var(--strata-accent) 16%,transparent);padding-inline:1rem}
+.svc .n{font-family:var(--strata-font-display);font-weight:700;color:var(--strata-secondary);font-size:1.1rem}
+.svc h3{font-size:clamp(1.5rem,3vw,2.2rem);font-weight:700}
+.svc p{margin:0;color:var(--strata-muted)}
+@media(max-width:760px){.svc li{grid-template-columns:44px 1fr}.svc p{grid-column:2}}
+
+/* gas */
+.gas{background:var(--strata-text);color:var(--strata-bg);border-radius:36px;margin:0 16px;padding:88px 0;position:relative;overflow:hidden}
+.gas .eyebrow{color:var(--strata-accent)}
+.gas .muted{color:color-mix(in srgb,var(--strata-bg) 70%,transparent)}
+.gas-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.gcard{background:color-mix(in srgb,var(--strata-bg) 7%,transparent);border:1px solid color-mix(in srgb,var(--strata-bg) 14%,transparent);border-radius:24px;padding:1.6rem 1.4rem;display:flex;flex-direction:column;gap:.4rem;position:relative;transition:transform .25s,border-color .25s}
+.gcard:hover{transform:translateY(-4px);border-color:var(--strata-accent)}
+.gcard .kg{font-family:var(--strata-font-display);font-size:3.2rem;font-weight:800;line-height:1;letter-spacing:-.04em}
+.gcard .kg small{font-size:1.1rem;font-weight:600;color:var(--strata-accent)}
+.gcard .price{font-family:var(--strata-font-display);font-size:1.5rem;font-weight:700;color:var(--strata-accent);margin-top:auto;padding-top:1rem}
+.gcard .use{font-size:.9rem;color:color-mix(in srgb,var(--strata-bg) 65%,transparent)}
+.gas-side{display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:center;margin-top:2rem;padding:1.4rem 1.6rem;border-radius:20px;background:var(--strata-primary)}
+.gas-side p{margin:0}
+.gas-img{position:absolute;right:-40px;top:30px;width:300px;opacity:.9;pointer-events:none}
+@media(max-width:1000px){.gas-grid{grid-template-columns:repeat(2,1fr)}.gas-img{display:none}}
+@media(max-width:560px){.gas-side{grid-template-columns:1fr}.gcard .kg{font-size:2.4rem}}
+
+/* seeds */
+.seed-row{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.seed{background:var(--strata-surface);border:1px solid color-mix(in srgb,var(--strata-text) 9%,transparent);border-radius:22px;overflow:hidden;display:flex;flex-direction:column}
+.seed img{aspect-ratio:1;object-fit:cover;width:100%;background:#fff;transition:transform .5s}
+.seed:hover img{transform:scale(1.05)}
+.seed div{padding:1rem 1.1rem 1.2rem}
+.seed b{font-family:var(--strata-font-display);font-size:1.15rem;display:block}
+.seed span{font-size:.85rem;color:var(--strata-muted)}
+.brands{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1.6rem}
+.chip{padding:.45rem .9rem;border-radius:999px;background:var(--strata-surface);border:1px solid color-mix(in srgb,var(--strata-text) 12%,transparent);font-size:.85rem;font-weight:600}
+@media(max-width:900px){.seed-row{grid-template-columns:repeat(2,1fr)}}
+
+/* story */
+.story{display:grid;grid-template-columns:.9fr 1.1fr;gap:4rem;align-items:start}
+.story-photo{position:sticky;top:100px}
+.story-photo img{border-radius:28px;aspect-ratio:4/5;object-fit:cover;width:100%}
+.story-photo figcaption{font-size:.85rem;color:var(--strata-muted);margin-top:.7rem}
+.tl{list-style:none;margin:2rem 0 0;padding:0;position:relative}
+.tl::before{content:"";position:absolute;left:11px;top:8px;bottom:8px;width:2px;background:color-mix(in srgb,var(--strata-primary) 30%,transparent)}
+.tl li{position:relative;padding:0 0 2.4rem 3rem}
+.tl li::before{content:"";position:absolute;left:3px;top:6px;width:18px;height:18px;border-radius:50%;background:var(--strata-bg);border:4px solid var(--strata-primary)}
+.tl .yr{font-family:var(--strata-font-display);font-weight:800;font-size:2.6rem;color:var(--strata-secondary);letter-spacing:-.04em;line-height:1}
+.tl h3{font-size:1.45rem;margin:.4rem 0 .5rem}
+.tl p{margin:0;color:var(--strata-muted)}
+.quote{margin-top:.5rem;padding:1.6rem 1.8rem;border-radius:22px;background:var(--strata-surface);border:1px solid color-mix(in srgb,var(--strata-text) 9%,transparent);font-family:var(--strata-font-display);font-size:1.35rem;line-height:1.3;letter-spacing:-.01em}
+.quote small{display:block;font-family:var(--strata-font-body);font-size:.85rem;color:var(--strata-muted);margin-top:.6rem;letter-spacing:0}
+@media(max-width:900px){.story{grid-template-columns:1fr;gap:2rem}.story-photo{position:static;max-width:440px}}
+
+/* rooted */
+.rooted{background:linear-gradient(180deg,transparent,color-mix(in srgb,var(--strata-accent) 22%,transparent))}
+.rooted-grid{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:180px;gap:14px}
+.rooted-grid figure{margin:0;border-radius:22px;overflow:hidden;position:relative;background:var(--strata-surface)}
+.rooted-grid img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.rooted-grid figure:hover img{transform:scale(1.06)}
+.rooted-grid figcaption{position:absolute;left:12px;bottom:12px;background:var(--strata-surface);padding:.35rem .75rem;border-radius:999px;font-size:.8rem;font-weight:700}
+.r-logo{grid-column:span 2;grid-row:span 2;display:grid;place-items:center;background:#fff!important;padding:1.5rem}
+.r-logo img{object-fit:contain!important;width:85%!important;height:auto!important}
+.r-a{grid-column:span 2;grid-row:span 2}.r-b{grid-column:span 2}.r-c{grid-column:span 2}.r-d{grid-column:span 3}.r-e{grid-column:span 3}
+@media(max-width:800px){.rooted-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:160px}.r-logo,.r-a{grid-column:span 2;grid-row:span 2}.r-b,.r-c,.r-d,.r-e{grid-column:span 1}}
+
+/* visit */
+.visit{display:grid;grid-template-columns:1.1fr 1fr;gap:16px}
+.vcard{background:var(--strata-surface);border:1px solid color-mix(in srgb,var(--strata-text) 9%,transparent);border-radius:28px;padding:2.2rem}
+.vcard h2{font-size:clamp(2rem,4.4vw,3.2rem)}
+.vlist{list-style:none;margin:1.8rem 0 2rem;padding:0;display:grid;gap:1.1rem}
+.vlist li{display:flex;gap:1rem;align-items:flex-start}
+.vlist .ic{flex:none;width:44px;height:44px;border-radius:14px;background:color-mix(in srgb,var(--strata-primary) 12%,transparent);display:grid;place-items:center;color:var(--strata-primary)}
+.vlist .ic svg{width:22px;height:22px}
+.vlist b{display:block}
+.vlist a{text-decoration:none}
+.vimg{border-radius:28px;overflow:hidden;position:relative;min-height:380px}
+.vimg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.vimg span{position:absolute;left:18px;bottom:18px;background:var(--strata-surface);padding:.5rem .9rem;border-radius:999px;font-weight:700;font-size:.85rem}
+@media(max-width:900px){.visit{grid-template-columns:1fr}.vimg{min-height:280px}}
+
+/* footer */
+footer{background:var(--strata-primary);color:#F5EFDF;margin-top:96px;padding:72px 0 120px;overflow:hidden}
+.fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2rem}
+footer h4{font-family:var(--strata-font-display);font-size:1rem;margin:0 0 .8rem;color:var(--strata-accent)}
+footer a{text-decoration:none;opacity:.85}
+footer a:hover{opacity:1}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:.45rem}
+.fword{font-family:var(--strata-font-display);font-weight:800;font-size:clamp(3.5rem,13vw,11rem);letter-spacing:-.06em;line-height:.85;margin-top:3rem;color:color-mix(in srgb,#F5EFDF 16%,transparent);white-space:nowrap}
+.fsmall{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.85rem;opacity:.75;margin-top:1.5rem}
+@media(max-width:800px){.fgrid{grid-template-columns:1fr}footer{padding-bottom:110px}}
+
+/* mobile bar */
+.mbar{position:fixed;left:12px;right:12px;bottom:12px;z-index:60;display:none;gap:8px;padding:8px;border-radius:999px;background:var(--strata-text);box-shadow:0 18px 40px -12px rgba(0,0,0,.45)}
+.mbar a{flex:1;text-align:center;padding:.85rem;border-radius:999px;font-weight:700;text-decoration:none;color:#fff}
+.mbar .wa{background:#1FA855}
+.mbar .call{background:color-mix(in srgb,#fff 12%,transparent)}
+@media(max-width:760px){.mbar{display:flex}}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  .strata-grain-orbs .orb,.strata-grain-orbs::after{animation:none}
+  .rv{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<div class="demobar" data-i="demo">Konsepvoorskou gemaak deur <a href="https://klaarwerk.co.za" target="_blank" rel="noopener">Klaarwerk Studio</a>, nie die lewendige webwerf nie.</div>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="delmas-saad/logo.png" alt="Delmas Saad en Produkte logo"><span>Delmas Saad<small data-i="since">Sedert 1985</small></span></a>
+    <nav>
+      <a href="#dienste" data-i="n1">Dienste</a>
+      <a href="#gas" data-i="n2">Gas</a>
+      <a href="#saad" data-i="n3">Saad</a>
+      <a href="#storie" data-i="n4">Ons storie</a>
+      <a href="#rooted" data-i="n5">Geskenkwinkel</a>
+    </nav>
+    <div class="lang" role="group" aria-label="Taal / Language">
+      <button type="button" data-lang="af" aria-pressed="true">AF</button>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+    <a class="btn btn-green" href="tel:+27828730153"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><span data-i="call">Bel ons</span></a>
+  </div>
+</header>
+
+<main id="top">
+<section class="strata-grain-orbs hero" data-strata="grain-orbs">
+  <div class="orbs" aria-hidden="true"><span class="orb orb--1"></span><span class="orb orb--2"></span><span class="orb orb--3"></span></div>
+  <div class="wrap hero-grid">
+    <div>
+      <span class="badge"><b>●</b> <span data-i="badge">Familie-besigheid in Delmas sedert 1985</span></span>
+      <h1 data-i="h1">Saad vir vandag. <em>Groei</em> vir môre.</h1>
+      <p class="lede" data-i="lede">Vier dekades van vertroue en gehalte. Landbousaad, Afrox gas, voëlsaad, hondekos en alles tussenin, met diens wat jy net by 'n familie-winkel kry.</p>
+      <div class="cta">
+        <a class="btn btn-green" href="https://wa.me/27828730153?text=Goeie%20dag%20Delmas%20Saad" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg><span data-i="wa">WhatsApp 'n bestelling</span></a>
+        <a class="btn btn-line" href="#gas" data-i="seegas">Sien gaspryse</a>
+      </div>
+      <div class="facts">
+        <div><b>40</b><span data-i="f1">jaar diens</span></div>
+        <div><b>3</b><span data-i="f2">generasies</span></div>
+        <div><b>25 kg – 1 t</b><span data-i="f3">sakke beskikbaar</span></div>
+      </div>
+    </div>
+    <div class="hero-art">
+      <div class="frame"><img src="delmas-saad/store.jpg" alt="Illustrasie van die Delmas Saad en Produkte winkel" width="1200" height="800"></div>
+      <div class="sticker"><b>1985</b><span data-i="stick">Sedert ons begin</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="strata-marquee" data-strata="marquee-ribbon" aria-label="Wat ons verkoop">
+  <div class="ribbon ribbon--a" data-direction="-1">
+    <div class="track">
+      <span class="item">Mieliesaad <span class="star" aria-hidden="true">✦</span></span>
+      <span class="item">Sojabone <span class="star" aria-hidden="true">✦</span></span>
+      <span class="item">Grassaad <span class="star" aria-hidden="true">✦</span></span>
+      <span class="item">Groentesaad <span class="star" aria-hidden="true">✦</span></span>
+      <span class="item">Afrox gas <span class="star" aria-hidden="true">✦</span></span>
+    </div>
+  </div>
+  <div class="ribbon ribbon--b" data-direction="1" aria-hidden="true">
+    <div class="track">
+      <span class="item">Voëlsaad <span class="star">●</span></span>
+      <span class="item">Hondekos <span class="star">●</span></span>
+      <span class="item">Sakke <span class="star">●</span></span>
+      <span class="item">Saagsels <span class="star">●</span></span>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="dienste">
+  <div class="wrap">
+    <div class="head rv">
+      <div><span class="eyebrow" data-i="s-eye">Wat ons doen</span><h2 data-i="s-h">Alles vir die plaas,<br>die tuin en die huis.</h2></div>
+      <p class="muted" data-i="s-p">Van 'n sak mieliesaad vir die land tot 'n 9 kg gasbottel vir die braai. Kom kuier, of WhatsApp vooraf en ons het dit gereed.</p>
+    </div>
+    <ol class="svc">
+      <li class="rv"><span class="n">01</span><h3 data-i="v1h">Landbousaad</h3><p data-i="v1p">Mielies, sojabone, grassaad en groentesaad van Starke Ayres en Hygrotech. Raad oor wat werk in ons Hoëveld-grond.</p></li>
+      <li class="rv"><span class="n">02</span><h3 data-i="v2h">Afrox gas</h3><p data-i="v2p">Ruil jou leë bottel in vir 'n vol een, of laat dit hervul. 9 kg tot 48 kg.</p></li>
+      <li class="rv"><span class="n">03</span><h3 data-i="v3h">Saadskoonmaak &amp; verpakking</h3><p data-i="v3p">Professionele skoonmaak en verpakking van jou saad vir die beste oes.</p></li>
+      <li class="rv"><span class="n">04</span><h3 data-i="v4h">Voëlsaad &amp; hondekos</h3><p data-i="v4p">Voëlsaad, hondekos en eetbare sade, in klein of groot hoeveelhede.</p></li>
+      <li class="rv"><span class="n">05</span><h3 data-i="v5h">Sakke &amp; saagsels</h3><p data-i="v5p">Leë sakke van 25 kg tot 1 ton, en saagsels vir stalle, hokke en tuine.</p></li>
+      <li class="rv"><span class="n">06</span><h3 data-i="v6h">Rooted geskenkwinkel</h3><p data-i="v6p">Handgemaakte leergordels, gekwilte handsakke en houtkaasborde. Iets moois om saam te neem.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="gas" id="gas">
+
+  <div class="wrap">
+    <div class="head rv">
+      <div><span class="eyebrow" data-i="g-eye">Afrox gasruil</span><h2 data-i="g-h">Gaspryse,<br>sonder om te bel.</h2></div>
+      <p class="muted" data-i="g-p">Bring jou leë Afrox bottel en ruil dit in. Pryse soos op ons huidige webwerf; bel om te bevestig.</p>
+    </div>
+    <div class="gas-grid">
+      <div class="gcard rv"><span class="kg">9<small>kg</small></span><span class="use" data-i="g1">Braai, kamp en klein stoof</span><span class="price">R360</span></div>
+      <div class="gcard rv"><span class="kg">14<small>kg</small></span><span class="use" data-i="g2">Huishouding se gunsteling</span><span class="price">R580</span></div>
+      <div class="gcard rv"><span class="kg">19<small>kg</small></span><span class="use" data-i="g3">Stoof, geiser en verwarmer</span><span class="price">R765</span></div>
+      <div class="gcard rv"><span class="kg">48<small>kg</small></span><span class="use" data-i="g4">Restaurante, plase en groot huise</span><span class="price">R1 930</span></div>
+    </div>
+    <div class="gas-side rv">
+      <p data-i="g-side"><b>Het jy nie 'n Afrox bottel nie?</b> Ons hervul ook gasbottels. WhatsApp vir 'n prys.</p>
+      <a class="btn btn-gold" href="https://wa.me/27828730153?text=Goeie%20dag%2C%20ek%20wil%20graag%20gas%20bestel" target="_blank" rel="noopener" data-i="g-btn">Bestel gas</a>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="saad">
+  <div class="wrap">
+    <div class="head rv">
+      <div><span class="eyebrow" data-i="sd-eye">Groentesaad</span><h2 data-i="sd-h">Plant iets<br>hierdie seisoen.</h2></div>
+      <p class="muted" data-i="sd-p">'n Paar gunstelinge uit ons rakke. Pryse wissel na grootte; vra ons in die winkel of op WhatsApp.</p>
+    </div>
+    <div class="seed-row">
+      <div class="seed rv"><img src="delmas-saad/seed-cauli.jpg" alt="Starke Ayres blomkoolsaad" loading="lazy"><div><b data-i="p1">Blomkool</b><span>Starke Ayres</span></div></div>
+      <div class="seed rv"><img src="delmas-saad/seed-pea.jpg" alt="Starke Ayres ertjiesaad" loading="lazy"><div><b data-i="p2">Ertjies</b><span>Starke Ayres</span></div></div>
+      <div class="seed rv"><img src="delmas-saad/seed-egg.jpg" alt="Starke Ayres eiervrugsaad" loading="lazy"><div><b data-i="p3">Eiervrug</b><span>Starke Ayres</span></div></div>
+      <div class="seed rv"><img src="delmas-saad/seed-beet.jpg" alt="Starke Ayres beetsaad" loading="lazy"><div><b data-i="p4">Beet</b><span>Starke Ayres</span></div></div>
+    </div>
+    <div class="brands rv"><span class="chip">Starke Ayres</span><span class="chip">Hygrotech</span><span class="chip" data-i="c1">Mielies</span><span class="chip" data-i="c2">Sojabone</span><span class="chip" data-i="c3">Grassaad</span><span class="chip" data-i="c4">Eetbare sade</span></div>
+  </div>
+</section>
+
+<section class="block" id="storie" style="padding-top:24px">
+  <div class="wrap story">
+    <figure class="story-photo rv" style="margin:0">
+      <img src="delmas-saad/founder.jpg" alt="Chris Berrangé in 'n land" loading="lazy">
+      <figcaption data-i="cap">Chris Berrangé, wat Delmas Saad in 1985 begin het.</figcaption>
+    </figure>
+    <div>
+      <span class="eyebrow rv" data-i="st-eye">Ons storie</span>
+      <h2 class="rv" style="margin-top:.8rem" data-i="st-h">Drie generasies.<br>Een winkel.</h2>
+      <ol class="tl">
+        <li class="rv"><span class="yr">1985</span><h3 data-i="t1h">Chris Berrangé begin</h3><p data-i="t1p">Delmas Saad word gestig om boere in die omgewing van goeie saad en eerlike raad te voorsien.</p></li>
+        <li class="rv"><span class="yr">2015</span><h3 data-i="t2h">Elanie Hugo neem oor</h3><p data-i="t2p">Saam met Tannie Rina as bestuurder groei die winkel, en verskuif na 47 3de Straat waar ons nou al tien jaar is.</p></li>
+        <li class="rv"><span class="yr">2023</span><h3 data-i="t3h">Lanike &amp; Diek Prinsloo</h3><p data-i="t3p">Die derde generasie neem die leisels. Dieselfde waardes, met 'n nuwe geskenkwinkel by.</p></li>
+      </ol>
+      <div class="quote rv" data-i="q">“Trots Afrikaans, gebou op geloof en op die mense van Delmas.”<small>Delmas Saad en Produkte</small></div>
+    </div>
+  </div>
+</section>
+
+<section class="block rooted" id="rooted">
+  <div class="wrap">
+    <div class="head rv">
+      <div><span class="eyebrow" data-i="r-eye">Rooted @ Delmas Saad</span><h2 data-i="r-h">Die geskenkwinkel<br>binne-in die winkel.</h2></div>
+      <p class="muted" data-i="r-p">Handgemaakte goed van plaaslike mense. Perfek vir verjaarsdae, Kersfees of net omdat.</p>
+    </div>
+    <div class="rooted-grid">
+      <figure class="r-logo rv"><img src="delmas-saad/rooted.png" alt="Rooted Geskenkwinkel logo" loading="lazy"></figure>
+      <figure class="r-a rv"><img src="delmas-saad/bag.jpg" alt="Gekwilte handsak" loading="lazy"><figcaption data-i="r1">Gekwilte handsakke</figcaption></figure>
+      <figure class="r-b rv"><img src="delmas-saad/belt.jpg" alt="Handgemaakte leergordel" loading="lazy"><figcaption data-i="r2">Leergordels</figcaption></figure>
+      <figure class="r-c rv"><img src="delmas-saad/pouch.jpg" alt="Blommetjie-sakkie" loading="lazy"><figcaption data-i="r3">Sakkies</figcaption></figure>
+      <figure class="r-d rv"><img src="delmas-saad/boards.jpg" alt="Hout met ingegraveerde teks" loading="lazy"><figcaption data-i="r4">Houtwerk</figcaption></figure>
+      <figure class="r-e rv"><img src="delmas-saad/quilt.jpg" alt="Gekwilte produkte" loading="lazy"><figcaption data-i="r5">Kwiltwerk</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="kontak" style="padding-bottom:0">
+  <div class="wrap visit">
+    <div class="vcard rv">
+      <span class="eyebrow" data-i="k-eye">Kom kuier</span>
+      <h2 style="margin-top:.8rem" data-i="k-h">Ons is op 3de Straat.</h2>
+      <ul class="vlist">
+        <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s7-6.3 7-12a7 7 0 1 0-14 0c0 5.7 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg></span><div><b data-i="k1">Adres</b><a href="https://www.google.com/maps/search/?api=1&query=Delmas+Saad+en+Produkte+47+3rd+Street+Delmas" target="_blank" rel="noopener">47 3de Straat, Delmas, 2210</a></div></li>
+        <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span><div><b data-i="k2">Bel of WhatsApp</b><a href="tel:+27828730153">082 873 0153</a></div></li>
+        <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span><div><b>E-pos</b><a href="mailto:delmassaad1985@gmail.com">delmassaad1985@gmail.com</a></div></li>
+      </ul>
+      <div style="display:flex;gap:.7rem;flex-wrap:wrap">
+        <a class="btn btn-green" href="https://wa.me/27828730153?text=Goeie%20dag%20Delmas%20Saad" target="_blank" rel="noopener" data-i="wa2">WhatsApp ons</a>
+        <a class="btn btn-line" href="https://www.google.com/maps/search/?api=1&query=Delmas+Saad+en+Produkte+47+3rd+Street+Delmas" target="_blank" rel="noopener" data-i="dir">Kry aanwysings</a>
+      </div>
+    </div>
+    <div class="vimg rv"><img src="delmas-saad/inside.jpg" alt="Illustrasie van binne die winkel" loading="lazy"><span data-i="k-img">Binne-in Delmas Saad</span></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <a class="brand" href="#top" style="opacity:1"><img src="delmas-saad/logo.png" alt="" style="background:#F5EFDF;border-radius:12px;padding:4px"><span>Delmas Saad en Produkte</span></a>
+        <p style="opacity:.8;max-width:26rem" data-i="ft">Saad vir vandag, groei vir môre. 'n Familie-besigheid in Delmas sedert 1985.</p>
+      </div>
+      <div><h4 data-i="fh1">Winkel</h4><ul><li><a href="#dienste" data-i="n1">Dienste</a></li><li><a href="#gas" data-i="n2">Gas</a></li><li><a href="#saad" data-i="n3">Saad</a></li><li><a href="#rooted" data-i="n5">Geskenkwinkel</a></li></ul></div>
+      <div><h4 data-i="fh2">Kontak</h4><ul><li><a href="tel:+27828730153">082 873 0153</a></li><li><a href="mailto:delmassaad1985@gmail.com">delmassaad1985@gmail.com</a></li><li>47 3de Straat, Delmas</li></ul></div>
+    </div>
+    <div class="fword" aria-hidden="true">Delmas Saad</div>
+    <div class="fsmall"><span>© 2026 Delmas Saad en Produkte</span><span data-i="fby">Konsep deur <a href="https://klaarwerk.co.za" style="opacity:1;text-decoration:underline">Klaarwerk Studio</a></span></div>
+  </div>
+</footer>
+
+<div class="mbar"><a class="wa" href="https://wa.me/27828730153?text=Goeie%20dag%20Delmas%20Saad" target="_blank" rel="noopener">WhatsApp</a><a class="call" href="tel:+27828730153" data-i="call">Bel ons</a></div>
+
+<script type="module">
+// Marquee Ribbon (OpenStrata): constant drift, scroll adds a decaying boost, pauses off-screen.
+const section=document.querySelector('[data-strata="marquee-ribbon"]');
+const reduceMotion=matchMedia('(prefers-reduced-motion: reduce)');
+const BASE_SPEED=55;
+const rows=[...section.querySelectorAll('.ribbon')].map((ribbon)=>{
+  const track=ribbon.querySelector('.track');const original=[...track.children];
+  while(track.scrollWidth<ribbon.clientWidth*1.2)original.forEach((n)=>track.append(n.cloneNode(true)));
+  [...track.children].forEach((n)=>{const c=n.cloneNode(true);c.setAttribute('aria-hidden','true');track.append(c);});
+  return{ribbon,track,direction:Number(ribbon.dataset.direction),offset:0,width:track.scrollWidth/2};
+});
+let boost=0,lastScroll=scrollY;
+addEventListener('scroll',()=>{boost=Math.min(boost+Math.abs(scrollY-lastScroll)*6,1600);lastScroll=scrollY;},{passive:true});
+let hover=1;
+section.addEventListener('pointerenter',()=>{hover=.25});section.addEventListener('pointerleave',()=>{hover=1});
+addEventListener('resize',()=>rows.forEach((r)=>{r.width=r.track.scrollWidth/2}));
+let frame=0,visible=false,last=performance.now();
+function tick(now){frame=0;const dt=Math.min(now-last,50)/1000;last=now;boost*=.92;
+  for(const r of rows){r.offset=(r.offset+(BASE_SPEED+boost)*hover*dt)%r.width;const x=r.direction<0?-r.offset:r.offset-r.width;r.track.style.transform=`translate3d(${x}px,0,0)`;}
+  schedule();}
+function schedule(){const run=visible&&!document.hidden&&!reduceMotion.matches;
+  if(run&&!frame){last=performance.now();frame=requestAnimationFrame(tick);}else if(!run&&frame){cancelAnimationFrame(frame);frame=0;}}
+new IntersectionObserver(([e])=>{visible=e.isIntersecting;schedule();}).observe(section);
+document.addEventListener('visibilitychange',schedule);reduceMotion.addEventListener('change',schedule);
+
+// Reveal on scroll
+const io=new IntersectionObserver((es)=>es.forEach((e)=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach((el)=>io.observe(el));
+
+// AF / EN
+const EN={
+ demo:'Concept preview made by <a href="https://klaarwerk.co.za" target="_blank" rel="noopener">Klaarwerk Studio</a>, not the live site.',
+ since:'Since 1985',n1:'Services',n2:'Gas',n3:'Seed',n4:'Our story',n5:'Gift shop',call:'Call us',
+ badge:'Family business in Delmas since 1985',h1:'Seed for today. <em>Growth</em> for tomorrow.',
+ lede:'Four decades of trust and quality. Agricultural seed, Afrox gas, bird seed, dog food and everything in between, with the service you only get at a family store.',
+ wa:'WhatsApp an order',seegas:'See gas prices',f1:'years of service',f2:'generations',f3:'bags available',stick:'Since we started',
+ 's-eye':'What we do','s-h':'Everything for the farm,<br>the garden and the home.','s-p':'From a bag of maize seed for the lands to a 9 kg gas bottle for the braai. Pop in, or WhatsApp ahead and we\'ll have it ready.',
+ v1h:'Agricultural seed',v1p:'Maize, soybeans, grass and vegetable seed from Starke Ayres and Hygrotech. Advice on what works in Highveld soil.',
+ v2h:'Afrox gas',v2p:'Swap your empty bottle for a full one, or have it refilled. 9 kg to 48 kg.',
+ v3h:'Seed cleaning &amp; packaging',v3p:'Professional cleaning and packaging of your seed for the best harvest.',
+ v4h:'Bird seed &amp; dog food',v4p:'Bird seed, dog food and edible seeds, in small or large quantities.',
+ v5h:'Bags &amp; sawdust',v5p:'Empty bags from 25 kg to 1 ton, and sawdust for stables, coops and gardens.',
+ v6h:'Rooted gift shop',v6p:'Handmade leather belts, quilted handbags and wooden cheese boards. Something lovely to take home.',
+ 'g-eye':'Afrox gas exchange','g-h':'Gas prices,<br>without phoning.','g-p':'Bring your empty Afrox bottle and swap it. Prices as on our current website; call to confirm.',
+ g1:'Braai, camping and small stoves',g2:'The household favourite',g3:'Stove, geyser and heater',g4:'Restaurants, farms and big homes',
+ 'g-side':'<b>Don\'t have an Afrox bottle?</b> We refill gas bottles too. WhatsApp for a price.','g-btn':'Order gas',
+ 'sd-eye':'Vegetable seed','sd-h':'Plant something<br>this season.','sd-p':'A few favourites from our shelves. Prices vary by size; ask us in store or on WhatsApp.',
+ p1:'Cauliflower',p2:'Peas',p3:'Eggplant',p4:'Beetroot',c1:'Maize',c2:'Soybeans',c3:'Grass seed',c4:'Edible seeds',
+ cap:'Chris Berrangé, who started Delmas Saad in 1985.','st-eye':'Our story','st-h':'Three generations.<br>One store.',
+ t1h:'Chris Berrangé starts out',t1p:'Delmas Saad is founded to supply local farmers with good seed and honest advice.',
+ t2h:'Elanie Hugo takes over',t2p:'With Tannie Rina as manager the store grows, and moves to 47 3rd Street, our home for ten years now.',
+ t3h:'Lanike &amp; Diek Prinsloo',t3p:'The third generation takes the reins. The same values, with a new gift shop added.',
+ q:'“Proudly Afrikaans, built on faith and on the people of Delmas.”<small>Delmas Saad en Produkte</small>',
+ 'r-eye':'Rooted @ Delmas Saad','r-h':'The gift shop<br>inside the store.','r-p':'Handmade goods by local people. Perfect for birthdays, Christmas or just because.',
+ r1:'Quilted handbags',r2:'Leather belts',r3:'Pouches',r4:'Woodwork',r5:'Quilting',
+ 'k-eye':'Come visit','k-h':'We\'re on 3rd Street.',k1:'Address',k2:'Call or WhatsApp',wa2:'WhatsApp us',dir:'Get directions','k-img':'Inside Delmas Saad',
+ ft:'Seed for today, growth for tomorrow. A family business in Delmas since 1985.',fh1:'Store',fh2:'Contact',
+ fby:'Concept by <a href="https://klaarwerk.co.za" style="opacity:1;text-decoration:underline">Klaarwerk Studio</a>'
+};
+const AF={};document.querySelectorAll('[data-i]').forEach((el)=>{AF[el.dataset.i]??=el.innerHTML;});
+function setLang(l){const d=l==='en'?EN:AF;document.documentElement.lang=l;
+  document.querySelectorAll('[data-i]').forEach((el)=>{const v=d[el.dataset.i];if(v!=null)el.innerHTML=v;});
+  document.querySelectorAll('[data-lang]').forEach((b)=>b.setAttribute('aria-pressed',String(b.dataset.lang===l)));
+  try{localStorage.setItem('ds-lang',l)}catch(e){}}
+document.querySelectorAll('[data-lang]').forEach((b)=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
+try{const s=localStorage.getItem('ds-lang');if(s==='en')setLang('en')}catch(e){}
+</script>
+</body>
+</html>
