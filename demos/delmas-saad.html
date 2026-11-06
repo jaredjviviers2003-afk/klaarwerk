@@ -291,6 +291,16 @@ footer ul{list-style:none;margin:0;padding:0;display:grid;gap:.45rem}
 .kw-x{position:absolute;right:6px;top:4px;border:0;background:none;font-size:1.4rem;cursor:pointer;color:var(--strata-muted);width:36px;height:36px}
 @media(max-width:760px){.kw{bottom:84px;left:12px}}
 
+.chris{position:absolute;z-index:3;right:clamp(16px,5vw,72px);bottom:150px;margin:0;width:min(330px,34vw);display:flex;gap:.9rem;align-items:center;padding:.8rem 1rem .8rem .8rem;border-radius:22px;background:rgba(255,252,244,.1);border:1px solid rgba(255,252,244,.2);backdrop-filter:blur(14px);opacity:0;transform:translateY(16px);transition:opacity .7s ease .5s,transform .7s ease .5s;pointer-events:none}
+.hist[data-ch="0"] .chris{opacity:1;transform:none}
+.chris img{width:76px;height:76px;border-radius:16px;object-fit:cover;object-position:50% 25%;flex:none;filter:sepia(.35) saturate(.85);border:2px solid var(--strata-accent)}
+.chris figcaption{display:grid;gap:.15rem}
+.chris b{font-family:var(--strata-font-display);font-size:1.05rem;color:#fff}
+.chris small{font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--strata-accent)}
+.chris span{font-size:.9rem;line-height:1.4;color:rgba(255,252,244,.85);margin-top:.25rem}
+@media(max-width:900px){.chris{right:16px;left:auto;top:auto;bottom:auto;top:150px;width:min(300px,calc(100% - 32px))}}
+@media(prefers-reduced-motion:reduce){.chris{transition:none}}
+
 /* shop */
 .shop-top{scroll-margin-top:90px;display:flex;gap:.6rem;flex-wrap:wrap;align-items:center;margin-bottom:1.6rem}
 .tabs{display:flex;gap:.5rem;flex-wrap:wrap}
@@ -425,6 +435,10 @@ footer ul{list-style:none;margin:0;padding:0;display:grid;gap:.45rem}
     </figure>
     <div class="hist-shade"></div>
   </div>
+  <figure class="chris" aria-hidden="false">
+    <img src="delmas-saad/founder.jpg" alt="Chris Berrangé">
+    <figcaption><b>Chris Berrangé</b><small data-i="cr1">Stigter · 1985</small><span data-i="cr2">Trots Afrikaans, gebou op geloof en op die mense van Delmas.</span></figcaption>
+  </figure>
   <div class="hist-year" aria-hidden="true"><span id="yr">1985</span></div>
   <div class="wrap hist-copy">
     <span class="badge"><b>●</b> <span data-i="badge">Familie-besigheid in Delmas sedert 1985</span></span>
@@ -626,7 +640,7 @@ function show(n){const prev=i;i=(n+slides.length)%slides.length;
   slides.forEach((s,k)=>s.classList.toggle('on',k===i));chs.forEach((c,k)=>c.classList.toggle('on',k===i));
   tabs.forEach((t,k)=>{t.setAttribute('aria-selected',String(k===i));t.classList.toggle('past',k<i);const b=t.querySelector('b');b.style.animation='none';void b.offsetWidth;b.style.animation=''});
   slides[i].querySelectorAll('img').forEach(im=>{im.style.animation='none';void im.offsetWidth;im.style.animation=''});
-  rollYear(YEARS[prev]??1985,YEARS[i]);left=DUR;schedule()}
+  hero.dataset.ch=i;rollYear(YEARS[prev]??1985,YEARS[i]);left=DUR;schedule()}
 function running(){return visible&&!document.hidden&&!userPaused&&!hoverPause}
 function schedule(){clearTimeout(timer);hero.classList.toggle('paused',!running());
   if(running()){started=performance.now();timer=setTimeout(()=>show(i+1),left)}}
@@ -782,6 +796,7 @@ const EN={
  t0:'Chris starts',t1:'3rd Street',t2:'Third generation',t3y:'Today',t3:'Order online',
  'k-seed':'Vegetable seed','k-seeds':'12 varieties','k-gass':'9 – 48 kg','k-farm':'Farm &amp; feed','k-farms':'Maize, bird seed, dog food','k-bags':'Bags &amp; sawdust','k-bagss':'25 kg – 1 ton','k-gift':'Gifts','k-gifts':'Rooted, handmade',
  kw1:'Concept by Klaarwerk',kw2:'This is a concept preview',kw3:'Not Delmas Saad\'s live website. Designed and built by Klaarwerk Studio, right here in Delmas.',kw4:'I want this website',
+ cr1:'Founder · 1985',cr2:'Proudly Afrikaans, built on faith and on the people of Delmas.',
  fby:'Concept by <a href="https://klaarwerk.co.za" style="opacity:1;text-decoration:underline">Klaarwerk Studio</a>'
 };
 const PH={af:{srch:'Soek produkte…',nmph:'Jou naam'},en:{srch:'Search products…',nmph:'Your name'}};
