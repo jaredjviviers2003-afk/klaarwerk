@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en-ZA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Saturn Auto Body (concept preview) | Klaarwerk Studio</title>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --bg:#F5F6F8;--surface:#FFFFFF;--ink:#0D1522;--muted:#5A6474;--line:#DFE3E9;
+  --night:#0B1320;--night-2:#131E30;--on-night:#E9EDF3;--chrome:#AEB6C2;
+  --red:#E1302A;--red-dark:#B8221D;--on-red:#FFFFFF;--soft:#FCE9E8;
+  --display:"Barlow Condensed","Arial Narrow",sans-serif;--body:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1160px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);line-height:1;margin:0;letter-spacing:.01em;text-transform:uppercase;text-wrap:balance}
+p{margin:0} a{color:inherit}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px;border-radius:4px}
+.eyebrow{font:600 .78rem var(--body);letter-spacing:.16em;text-transform:uppercase;color:var(--red)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 24px;border-radius:6px;font-weight:700;font-size:1rem;text-decoration:none;border:2px solid transparent;cursor:pointer;transition:transform .15s ease,background .15s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn-red{background:var(--red);color:var(--on-red)}
+.btn-red:hover{background:var(--red-dark)}
+.btn-ghost{border-color:rgba(233,237,243,.4);color:var(--on-night)}
+.btn svg{width:18px;height:18px;flex:none}
+
+/* demo bar */
+.demo{background:#F2BE22;color:#13232B;font:600 14px/1.4 var(--body);padding:10px 16px;text-align:center}
+.demo a{font-weight:800}
+
+/* nav */
+nav{position:sticky;top:0;z-index:20;background:rgba(11,19,32,.96);backdrop-filter:blur(8px);color:var(--on-night);border-bottom:1px solid rgba(255,255,255,.08)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:14px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand svg{width:42px;height:42px;flex:none}
+.brand b{display:block;font-family:var(--display);font-weight:800;font-size:1.45rem;letter-spacing:.04em;line-height:1}
+.brand small{display:block;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--chrome)}
+.links{display:flex;gap:26px;font-size:.95rem;color:var(--chrome)}
+.links a{text-decoration:none}.links a:hover{color:#fff}
+.nav-call{padding:11px 18px;font-size:.95rem}
+@media (max-width:900px){.links{display:none}}
+@media (max-width:420px){.nav-call span{display:none}}
+
+/* hero */
+.hero{position:relative;overflow:hidden;background:radial-gradient(90% 120% at 85% 10%,#22324D 0%,var(--night) 55%);color:var(--on-night)}
+.hero::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(115deg,transparent 0 46px,rgba(255,255,255,.025) 46px 47px);pointer-events:none}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.25fr .95fr;gap:48px;align-items:center;padding-block:clamp(56px,9vw,112px)}
+.hero h1{font-size:clamp(2.9rem,7vw,5.4rem);font-weight:800;margin:14px 0 18px}
+.hero h1 em{font-style:normal;color:var(--red)}
+.hero .lede{font-size:1.15rem;color:#C7CFDA;max-width:52ch}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.badges span{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:7px 14px;font-size:.85rem;color:#DDE3EC;background:rgba(255,255,255,.04)}
+.badges span::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--red)}
+.panel{background:linear-gradient(160deg,rgba(255,255,255,.08),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:26px;box-shadow:0 30px 60px -30px rgba(0,0,0,.6)}
+.panel h3{font-size:1.1rem;letter-spacing:.12em;color:var(--chrome)}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
+.stat{background:rgba(11,19,32,.55);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:16px}
+.stat b{display:block;font-family:var(--display);font-weight:800;font-size:2.2rem;line-height:1;color:#fff}
+.stat span{font-size:.85rem;color:var(--chrome)}
+.stat.red{background:var(--red);border-color:var(--red)}
+.stat.red b,.stat.red span{color:#fff}
+.hours{display:flex;justify-content:space-between;gap:12px;margin-top:16px;font-size:.9rem;color:#C7CFDA;border-top:1px solid rgba(255,255,255,.1);padding-top:14px}
+.open{color:#7BE0A6;font-weight:600}
+@media (max-width:900px){.hero .wrap{grid-template-columns:1fr}}
+
+/* approvals strip */
+.approvals{background:var(--surface);border-bottom:1px solid var(--line)}
+.approvals .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px 32px;padding-block:24px}
+.oem{display:flex;align-items:center;gap:14px}
+.oem strong{font-family:var(--display);font-size:1.3rem;text-transform:uppercase;letter-spacing:.04em}
+.oem .tag{background:var(--soft);color:var(--red-dark);font-weight:700;font-size:.78rem;padding:5px 10px;border-radius:4px;letter-spacing:.06em;text-transform:uppercase}
+.makes{display:flex;flex-wrap:wrap;gap:8px 20px;color:var(--muted);font-family:var(--display);font-weight:700;font-size:1.05rem;letter-spacing:.08em;text-transform:uppercase}
+
+section{padding-block:clamp(56px,8vw,96px)}
+.head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:16px 40px;margin-bottom:36px}
+.head h2{font-size:clamp(2.2rem,4.6vw,3.4rem);font-weight:800;margin-top:10px}
+.head p{color:var(--muted);max-width:46ch}
+
+/* services */
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px;transition:border-color .2s ease,transform .2s ease}
+.card:hover{border-color:var(--red);transform:translateY(-3px)}
+.card .ic{width:46px;height:46px;border-radius:10px;background:var(--soft);color:var(--red);display:grid;place-items:center;margin-bottom:14px}
+.card .ic svg{width:24px;height:24px}
+.card h3{font-size:1.35rem;font-weight:700;margin-bottom:6px}
+.card p{font-size:.95rem;color:var(--muted)}
+@media (max-width:980px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.grid{grid-template-columns:1fr}}
+
+/* speed shop */
+.speed{background:var(--red);color:#fff;border-radius:18px;padding:clamp(26px,4vw,40px);display:grid;grid-template-columns:1.4fr 1fr;gap:24px;align-items:center;margin-top:28px;position:relative;overflow:hidden}
+.speed::after{content:"";position:absolute;right:-60px;top:-60px;width:260px;height:260px;border-radius:50%;border:40px solid rgba(255,255,255,.08)}
+.speed h3{font-size:clamp(1.8rem,3.6vw,2.5rem);font-weight:800}
+.speed p{color:#FFE3E1;margin-top:8px;max-width:52ch}
+.speed .btn{background:#fff;color:var(--red-dark);justify-self:end;position:relative;z-index:1}
+@media (max-width:760px){.speed{grid-template-columns:1fr}.speed .btn{justify-self:start}}
+
+/* claim steps */
+.dark{background:var(--night);color:var(--on-night)}
+.dark .head p{color:#B8C1CE}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:s}
+.step{border-top:3px solid var(--red);padding-top:18px}
+.step::before{counter-increment:s;content:"0" counter(s);font-family:var(--display);font-weight:800;font-size:2.6rem;color:rgba(255,255,255,.18);display:block;line-height:1;margin-bottom:8px}
+.step h3{font-size:1.35rem;font-weight:700;margin-bottom:6px}
+.step p{color:#B8C1CE;font-size:.95rem}
+@media (max-width:900px){.steps{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.steps{grid-template-columns:1fr}}
+
+/* why */
+.why{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.why-list{display:grid;gap:14px}
+.why-item{display:grid;grid-template-columns:44px 1fr;gap:16px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px}
+.why-item .ic{width:44px;height:44px;border-radius:50%;background:var(--night);color:#fff;display:grid;place-items:center}
+.why-item .ic svg{width:22px;height:22px}
+.why-item h3{font-size:1.25rem;font-weight:700}
+.why-item p{color:var(--muted);font-size:.95rem;margin-top:2px}
+.story{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px}
+.story h2{font-size:clamp(2rem,4vw,2.8rem);font-weight:800;margin:10px 0 14px}
+.story p+p{margin-top:12px}
+.story p{color:var(--muted)}
+.timeline{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px}
+.timeline div{border-left:3px solid var(--red);padding-left:12px}
+.timeline b{font-family:var(--display);font-size:1.6rem;display:block;line-height:1}
+.timeline span{font-size:.85rem;color:var(--muted)}
+.project{margin-top:20px;background:var(--night);color:#fff;border-radius:12px;padding:16px 18px;display:flex;gap:14px;align-items:center}
+.project svg{width:38px;height:38px;flex:none;color:var(--red)}
+.project small{display:block;color:var(--chrome);font-size:.8rem}
+@media (max-width:900px){.why{grid-template-columns:1fr}}
+
+/* quote */
+.quote{display:grid;grid-template-columns:1fr 1.1fr;gap:40px;align-items:start}
+.contact-list{display:grid;gap:14px;margin-top:24px}
+.contact-list a,.contact-list div{display:flex;gap:14px;align-items:center;text-decoration:none;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.contact-list svg{width:22px;height:22px;color:var(--red);flex:none}
+.contact-list small{display:block;color:var(--muted);font-size:.82rem}
+form{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:26px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+form h3{grid-column:1/-1;font-size:1.7rem;font-weight:800}
+label{display:grid;gap:6px;font-size:.85rem;font-weight:600;color:var(--muted)}
+label.full{grid-column:1/-1}
+input,select,textarea{font:inherit;font-size:1rem;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:12px 13px;width:100%}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--red);border-color:var(--red)}
+textarea{min-height:96px;resize:vertical}
+form .btn{grid-column:1/-1}
+.form-note{grid-column:1/-1;font-size:.82rem;color:var(--muted);text-align:center}
+@media (max-width:900px){.quote{grid-template-columns:1fr}}
+@media (max-width:520px){form{grid-template-columns:1fr}}
+
+footer{background:var(--night);color:var(--chrome);font-size:.88rem}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding-block:28px}
+footer b{color:#fff}
+
+/* mobile call bar */
+.callbar{display:none}
+@media (max-width:640px){
+  .callbar{display:grid;grid-template-columns:1fr 1fr;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:30;padding:10px max(12px,env(safe-area-inset-left,0px)) calc(10px + env(safe-area-inset-bottom,0px));background:rgba(11,19,32,.97)}
+  .callbar .btn{padding:13px 10px;font-size:.95rem}
+  body{padding-bottom:76px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<div class="demo">Concept preview made by <a href="https://klaarwerk.co.za">Klaarwerk Studio</a> for Saturn Auto Body. This is not the live site.</div>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Saturn Auto Body home">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="12" fill="#E1302A"/><ellipse cx="24" cy="24" rx="22" ry="7.5" fill="none" stroke="#E9EDF3" stroke-width="2.6" transform="rotate(-22 24 24)"/><circle cx="24" cy="24" r="12" fill="none" stroke="#0B1320" stroke-width="1.5"/></svg>
+      <span><b>SATURN</b><small>Auto Body &middot; Since 1995</small></span>
+    </a>
+    <div class="links"><a href="#services">Services</a><a href="#claims">Insurance claims</a><a href="#why">Why Saturn</a><a href="#contact">Contact</a></div>
+    <a class="btn btn-red nav-call" href="tel:+27123350233"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><span>012 335 0233</span></a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Panel beaters &middot; Gezina, Pretoria</p>
+      <h1>Accident repairs, <em>done right.</em> Since 1995.</h1>
+      <p class="lede">Audi and Volkswagen approved panel beaters in the heart of Pretoria. We handle insurance claims, panel beating and spray painting in a 3,000&nbsp;m&sup2; workshop, so your car comes back looking like it left the factory.</p>
+      <div class="ctas">
+        <a class="btn btn-red" href="#contact">Get a free quote</a>
+        <a class="btn btn-ghost" href="tel:+27123350233">Call 012 335 0233</a>
+      </div>
+      <div class="badges"><span>Audi approved</span><span>Volkswagen approved</span><span>Insurance approved</span><span>24-hour CCTV</span></div>
+    </div>
+    <aside class="panel" aria-label="Saturn Auto Body at a glance">
+      <h3>At a glance</h3>
+      <div class="stats">
+        <div class="stat red"><b>30+</b><span>years repairing cars</span></div>
+        <div class="stat"><b>3,000&nbsp;m&sup2;</b><span>modern panel shop</span></div>
+        <div class="stat"><b>2</b><span>service-quality awards (2009, 2010)</span></div>
+        <div class="stat"><b>In-house</b><span>paint bank for exact colour match</span></div>
+      </div>
+      <div class="hours"><span>Mon&ndash;Fri &middot; 07:30&ndash;17:00</span><span class="open" id="openNow">Open now</span></div>
+    </aside>
+  </div>
+</header>
+
+<div class="approvals">
+  <div class="wrap">
+    <div class="oem"><span class="tag">OEM approved</span><strong>Audi &amp; Volkswagen body repairer</strong></div>
+    <div class="makes" aria-label="Makes we repair"><span>Chevrolet</span><span>Ford</span><span>Honda</span><span>Isuzu</span><span>Mahindra</span><span>Datsun</span><span>&amp; more</span></div>
+  </div>
+</div>
+
+<section id="services">
+  <div class="wrap">
+    <div class="head">
+      <div><p class="eyebrow">What we do</p><h2>Every repair under one roof</h2></div>
+      <p>From a scratched bumper to a bent chassis, our team, paint bank and spray booths handle it all, with quality control at every step.</p>
+    </div>
+    <div class="grid">
+      <article class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 13l2-5a2 2 0 0 1 1.9-1.4h10.2A2 2 0 0 1 19 8l2 5v5a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1v-1H6v1a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><circle cx="7.5" cy="13.5" r="1"/><circle cx="16.5" cy="13.5" r="1"/></svg></div><h3>Panel beating</h3><p>Accident and collision repairs, including high-speed panel beating for quicker turnaround.</p></article>
+      <article class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 4h12v6H4z"/><path d="M16 7h3v5h-8v3"/><path d="M10 15h2v6h-2z"/></svg></div><h3>Spray painting</h3><p>Precise colour coding and infra-red curing for a smooth, factory-quality finish.</p></article>
+      <article class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 15h18"/><path d="M5 15V9a3 3 0 0 1 3-3h8a3 3 0 0 1 3 3v6"/><path d="M8 18h8"/></svg></div><h3>Bumper repairs</h3><p>A dedicated bumper room with its own spray booth, mixing room and oven.</p></article>
+      <article class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 20 20 4"/><path d="M4 4h6v6"/><path d="M20 20h-6v-6"/></svg></div><h3>Chassis straightening</h3><p>Measured, accurate frame and chassis repairs to get your car straight and safe.</p></article>
+      <article class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M8 12h8"/></svg></div><h3>Paintless dent removal</h3><p>Hail and parking-lot dents fixed without repainting, when the paint is still intact.</p></article>
+      <article class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 3l8 4v6c0 4-3.5 7-8 8-4.5-1-8-4-8-8V7z"/></svg></div><h3>Fibreglass repairs</h3><p>Cracks and damage to fibreglass panels, canopies and body kits repaired properly.</p></article>
+      <article class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 2v20M2 12h20M5 5l14 14M19 5 5 19"/></svg></div><h3>Aircon repairs</h3><p>Motor vehicle air-conditioning checked, repaired and re-gassed while your car is with us.</p></article>
+      <article class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18"/><circle cx="9" cy="9" r="1.2"/><circle cx="8" cy="14" r="1.2"/></svg></div><h3>Colour developing</h3><p>Our in-house paint bank mixes and matches your exact colour, even on older cars.</p></article>
+    </div>
+    <div class="speed">
+      <div><h3>Small damage? Use our Speed Shop.</h3><p>Minor repairs go through our dedicated Speed Shop unit, so you don't wait in line behind big accident jobs.</p></div>
+      <a class="btn" href="#contact">Book a quick repair</a>
+    </div>
+  </div>
+</section>
+
+<section class="dark" id="claims">
+  <div class="wrap">
+    <div class="head">
+      <div><p class="eyebrow">Insurance claims</p><h2>Had an accident? Here's what happens.</h2></div>
+      <p>We're approved by insurers and deal with them directly, so you have one less thing to worry about.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><h3>Bring your car in</h3><p>Drop it at 504 Ben Swart Street, Gezina, or call us first and we'll guide you.</p></div>
+      <div class="step"><h3>We assess &amp; quote</h3><p>We inspect the damage and send the quote to your insurer for approval.</p></div>
+      <div class="step"><h3>We repair</h3><p>Panel beating, painting and quality checks in our secure, camera-watched workshop.</p></div>
+      <div class="step"><h3>You collect</h3><p>Your car comes back repaired, cleaned and matched to its original colour.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="wrap why">
+    <div class="story">
+      <p class="eyebrow">Our story</p>
+      <h2>Thirty years of workmanship you can see</h2>
+      <p>Saturn Auto Body started in 1995 from humble beginnings and grew into an award-winning panel shop. Since 2004 we've worked from an ultra-modern 3,000&nbsp;m&sup2; workshop in Gezina, Pretoria.</p>
+      <p>Today we're a registered private company with a highly qualified team, and approved by Audi, Volkswagen and leading insurers.</p>
+      <div class="timeline"><div><b>1995</b><span>Founded</span></div><div><b>2004</b><span>Moved to our Gezina workshop</span></div><div><b>2009&ndash;10</b><span>Service-quality awards</span></div></div>
+      <div class="project"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><polygon points="6 4 20 12 6 20"/></svg><div><b>Ford Mustang Spitfire</b><small>See our &ldquo;Warriors of the Sky&rdquo; custom paint project</small></div></div>
+    </div>
+    <div>
+      <p class="eyebrow">Why Saturn</p>
+      <h2 style="font-size:clamp(2rem,4vw,2.8rem);font-weight:800;margin:10px 0 20px">Your car is in safe hands</h2>
+      <div class="why-list">
+        <div class="why-item"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></div><div><h3>Approved repairer</h3><p>Audi and Volkswagen approved, and trusted by insurers.</p></div></div>
+        <div class="why-item"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div><div><h3>Exact colour match</h3><p>In-house paint bank, precise colour coding and infra-red curing.</p></div></div>
+        <div class="why-item"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="3" y="7" width="13" height="10" rx="2"/><path d="m16 11 5-3v8l-5-3"/></svg></div><div><h3>Secure workshop</h3><p>24-hour CCTV surveillance and a fully equipped alarm system.</p></div></div>
+        <div class="why-item"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 8v4l3 2"/><circle cx="12" cy="12" r="9"/></svg></div><div><h3>Quick turnaround</h3><p>A Speed Shop for small jobs and high-speed panel beating for the rest.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" style="background:var(--surface);border-top:1px solid var(--line)">
+  <div class="wrap quote">
+    <div>
+      <p class="eyebrow">Get a free quote</p>
+      <h2 style="font-size:clamp(2.2rem,4.6vw,3.4rem);font-weight:800;margin-top:10px">Send us your damage. We'll send you a quote.</h2>
+      <p style="color:var(--muted);margin-top:14px;max-width:46ch">Fill in the form with a few photos, call us, or pop in. Insurance claim or private job, we'll tell you exactly what it will take.</p>
+      <div class="contact-list">
+        <a href="tel:+27123350233"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><span><b>012 335 0233</b><small>Call us, Mon&ndash;Fri 07:30&ndash;17:00</small></span></a>
+        <a href="mailto:saturn@saturnauto.co.za"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span><b>saturn@saturnauto.co.za</b><small>Email photos of the damage</small></span></a>
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=Saturn+Auto+Body+504+Ben+Swart+Street+Gezina+Pretoria" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span><b>504 Ben Swart Street, Gezina</b><small>Pretoria, 0084 &middot; Get directions</small></span></a>
+      </div>
+    </div>
+    <form onsubmit="event.preventDefault();this.querySelector('.form-note').textContent='Demo form: on the live site this sends straight to your inbox.'">
+      <h3>Request a quote</h3>
+      <label>Your name<input autocomplete="name" placeholder="Full name"></label>
+      <label>Phone<input type="tel" autocomplete="tel" placeholder="082 000 0000"></label>
+      <label>Car make &amp; model<input placeholder="e.g. VW Polo 2019"></label>
+      <label>Insurance claim?<select><option>Yes, through my insurer</option><option>No, private job</option><option>Not sure yet</option></select></label>
+      <label class="full">What happened?<textarea placeholder="Tell us about the damage"></textarea></label>
+      <label class="full">Photos of the damage<input type="file" accept="image/*" multiple></label>
+      <button class="btn btn-red" type="submit">Send my quote request</button>
+      <p class="form-note">We reply within one working day.</p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span><b>Saturn Auto Body (Pty) Ltd</b> &middot; 504 Ben Swart Street, Gezina, Pretoria &middot; 012 335 0233</span>
+    <span>Concept by <a href="https://klaarwerk.co.za" style="color:#F2BE22">Klaarwerk Studio</a></span>
+  </div>
+</footer>
+
+<div class="callbar"><a class="btn btn-red" href="tel:+27123350233">Call now</a><a class="btn btn-ghost" href="#contact" style="background:#131E30">Free quote</a></div>
+
+<script>
+(function(){
+  var el=document.getElementById('openNow');
+  var n=new Date(new Date().toLocaleString('en-US',{timeZone:'Africa/Johannesburg'}));
+  var d=n.getDay(), m=n.getHours()*60+n.getMinutes();
+  var open=d>=1&&d<=5&&m>=450&&m<1020;
+  el.textContent=open?'Open now':'Closed now';
+  el.style.color=open?'#7BE0A6':'#F2A9A6';
+})();
+</script>
+</body>
+</html>
