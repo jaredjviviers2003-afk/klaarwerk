@@ -208,7 +208,7 @@ footer ul{list-style:none;margin:0;padding:0;display:grid;gap:.45rem}
 @media(max-width:760px){.mbar{display:flex}}
 
 /* shop */
-.shop-top{display:flex;gap:.6rem;flex-wrap:wrap;align-items:center;margin-bottom:1.6rem}
+.shop-top{scroll-margin-top:90px;display:flex;gap:.6rem;flex-wrap:wrap;align-items:center;margin-bottom:1.6rem}
 .tabs{display:flex;gap:.5rem;flex-wrap:wrap}
 .tab{font:inherit;font-weight:700;font-size:.9rem;padding:.6rem 1rem;border-radius:999px;border:1px solid color-mix(in srgb,var(--strata-text) 15%,transparent);background:var(--strata-surface);cursor:pointer;color:var(--strata-text);transition:background .2s,color .2s}
 .tab[aria-pressed=true]{background:var(--strata-primary);border-color:var(--strata-primary);color:#fff}
@@ -228,7 +228,13 @@ footer ul{list-style:none;margin:0;padding:0;display:grid;gap:.45rem}
 .pc:hover .ph img{transform:scale(1.05)}
 .pc .ph.ill{display:grid;place-items:center;background:radial-gradient(circle at 30% 25%,color-mix(in srgb,var(--strata-accent) 45%,#fff),color-mix(in srgb,var(--strata-primary) 18%,var(--strata-bg)))}
 .pc .ph.ill b{font-family:var(--strata-font-display);font-size:clamp(1.3rem,2.6vw,1.9rem);font-weight:800;letter-spacing:-.03em;text-align:center;padding:1rem;color:var(--strata-primary);line-height:1}
-.pc .tag{position:absolute;left:10px;top:10px;background:var(--strata-surface);font-size:.72rem;font-weight:700;padding:.25rem .6rem;border-radius:999px}
+.pc .tag{position:absolute;left:10px;top:10px;font:inherit;font-size:.72rem;font-weight:700;padding:.3rem .65rem;border-radius:999px;border:0;cursor:pointer;background:color-mix(in srgb,var(--strata-surface) 92%,transparent);color:var(--strata-primary);backdrop-filter:blur(6px);box-shadow:0 2px 8px -4px rgba(0,0,0,.3)}
+.pc .tag:hover{background:var(--strata-primary);color:#fff}
+.ghead{grid-column:1/-1;display:flex;align-items:baseline;justify-content:space-between;gap:1rem;padding:1.4rem 0 .2rem;border-bottom:2px solid var(--strata-text);margin-bottom:.2rem}
+.ghead:first-child{padding-top:0}
+.ghead h3{font-size:clamp(1.4rem,3vw,2rem);font-weight:800}
+.ghead h3 span{font-size:.55em;color:var(--strata-secondary);vertical-align:super;margin-left:.2rem}
+.seeall{font:inherit;font-weight:700;font-size:.9rem;background:none;border:0;cursor:pointer;color:var(--strata-primary)}
 .pc .bd{padding:.9rem 1rem 1rem;display:flex;flex-direction:column;gap:.15rem;flex:1}
 .pc .nm{font-family:var(--strata-font-display);font-weight:700;font-size:1.05rem;line-height:1.2}
 .pc .br{font-size:.8rem;color:var(--strata-muted)}
@@ -579,8 +585,8 @@ const P=[
  ['pouch','gift','Blommetjie-sakkie','Floral pouch',null,'pouch.jpg','Rooted'],
  ['wood','gift','Houtkaasbord met teks','Engraved wooden cheese board',null,'boards.jpg','Rooted'],
 ];
-const T={af:{addb:'Voeg by mandjie',add:'Voeg by',added:'✓ Bygevoeg',ask:'Vra prys',q:'Prys op aanvraag',none:'Niks gevind nie. Probeer \'n ander woord.',dempty:'Jou mandjie is nog leeg.',toast:'by jou mandjie gevoeg',quote:'kwotasie'},
-         en:{addb:'Add to cart',add:'Add',added:'✓ Added',ask:'Ask price',q:'Price on request',none:'Nothing found. Try another word.',dempty:'Your cart is still empty.',toast:'added to your cart',quote:'quote'}};
+const T={af:{addb:'Voeg by mandjie',add:'Voeg by',added:'✓ Bygevoeg',ask:'Vra prys',q:'Prys op aanvraag',seeall:'Sien alles',none:'Niks gevind nie. Probeer \'n ander woord.',dempty:'Jou mandjie is nog leeg.',toast:'by jou mandjie gevoeg',quote:'kwotasie'},
+         en:{addb:'Add to cart',add:'Add',added:'✓ Added',ask:'Ask price',q:'Price on request',seeall:'See all',none:'Nothing found. Try another word.',dempty:'Your cart is still empty.',toast:'added to your cart',quote:'quote'}};
 let lang='af',cat='all',query='';
 let cart={};try{cart=JSON.parse(localStorage.getItem('ds-cart')||'{}')}catch(e){}
 const byId=Object.fromEntries(P.map(p=>[p[0],p]));
@@ -590,14 +596,22 @@ const sub=p=>{const v=p[6]||'';return v.includes('|')?v.split('|')[lang==='en'?1
 const esc=t=>t.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 function save(){try{localStorage.setItem('ds-cart',JSON.stringify(cart))}catch(e){}}
 function renderTabs(){document.getElementById('tabs').innerHTML=CATS.map(c=>{const n=c[0]==='all'?P.length:P.filter(p=>p[1]===c[0]).length;return `<button class="tab" type="button" data-cat="${c[0]}" aria-pressed="${cat===c[0]}">${lang==='en'?c[2]:c[1]}<span>${n}</span></button>`}).join('')}
+function card(p,i){
+  const t=T[lang];const c=CATS.find(x=>x[0]===p[1]);
+  const ph=p[5]?`<div class="ph"><img src="${IMG+p[5]}" alt="${esc(nm(p))}" loading="lazy"></div>`:`<div class="ph ill"><b>${esc(nm(p))}</b></div>`;
+  const tag=`<button class="tag" type="button" data-cat="${p[1]}">${lang==='en'?c[2]:c[1]}</button>`;
+  const pr=p[4]!=null?`<span class="pr">${money(p[4])}</span>`:`<span class="pr q">${t.q}</span>`;
+  const btn=`<button class="add${p[4]==null?' q':''}" type="button" data-add="${p[0]}">${p[4]==null?t.ask:t.add}</button>`;
+  return `<article class="pc" style="animation-delay:${Math.min(i,12)*30}ms"><div style="position:relative">${ph}${tag}</div><div class="bd"><span class="nm">${esc(nm(p))}</span><span class="br">${esc(sub(p))}</span><div class="row">${pr}${btn}</div></div></article>`}
 function renderGrid(){
   const t=T[lang];const ql=query.trim().toLowerCase();
   const list=P.filter(p=>(cat==='all'||p[1]===cat)&&(!ql||(p[2]+' '+p[3]+' '+(p[6]||'')).toLowerCase().includes(ql)));
-  document.getElementById('grid').innerHTML=list.length?list.map((p,i)=>{
-    const ph=p[5]?`<div class="ph"><img src="${IMG+p[5]}" alt="${esc(nm(p))}" loading="lazy"></div>`:`<div class="ph ill"><b>${esc(nm(p))}</b></div>`;
-    const pr=p[4]!=null?`<span class="pr">${money(p[4])}</span>`:`<span class="pr q">${t.q}</span>`;
-    const btn=`<button class="add${p[4]==null?' q':''}" type="button" data-add="${p[0]}">${p[4]==null?t.ask:t.add}</button>`;
-    return `<article class="pc" style="animation-delay:${Math.min(i,12)*30}ms">${ph}<div class="bd"><span class="nm">${esc(nm(p))}</span><span class="br">${esc(sub(p))}</span><div class="row">${pr}${btn}</div></div></article>`}).join(''):`<p class="empty">${t.none}</p>`;
+  const g=document.getElementById('grid');
+  if(!list.length){g.innerHTML=`<p class="empty">${t.none}</p>`;return}
+  if(cat==='all'&&!ql){
+    g.innerHTML=CATS.slice(1).map(c=>{const items=list.filter(p=>p[1]===c[0]);if(!items.length)return'';
+      return `<div class="ghead"><h3>${lang==='en'?c[2]:c[1]} <span>${items.length}</span></h3><button type="button" class="seeall" data-cat="${c[0]}">${t.seeall} →</button></div>`+items.map(card).join('')}).join('');
+  } else g.innerHTML=list.map(card).join('');
 }
 function count(){return Object.values(cart).reduce((a,b)=>a+b,0)}
 function renderCart(){
@@ -628,7 +642,7 @@ function openCart(){lastFocus=document.activeElement;wrap.classList.add('open');
 function closeCart(){wrap.classList.remove('open');drawer.setAttribute('aria-hidden','true');document.body.style.overflow='';lastFocus&&lastFocus.focus()}
 document.addEventListener('click',e=>{
   const a=e.target.closest('[data-add]');if(a){addItem(a.dataset.add,a);return}
-  const c=e.target.closest('[data-cat]');if(c){cat=c.dataset.cat;renderTabs();renderGrid();return}
+  const c=e.target.closest('[data-cat]');if(c){cat=c.dataset.cat;query='';document.getElementById('q').value='';renderTabs();renderGrid();if(!c.classList.contains('tab'))document.getElementById('winkel').querySelector('.shop-top').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});return}
   if(e.target.closest('[data-cart]')){openCart();return}
   if(e.target.closest('[data-close]')){closeCart();return}
   const i=e.target.closest('[data-inc]');if(i){cart[i.dataset.inc]++;save();renderCart();return}
