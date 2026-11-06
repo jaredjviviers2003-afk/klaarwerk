@@ -11,9 +11,9 @@ FONTS = KIT.parent / "social/kit/fonts"
 E = html.escape
 
 PACKAGES = {
-    "Starter": (6500, "Up to 5 pages, copywriting, .co.za domain for the first year, WhatsApp and call buttons, mobile-first design"),
-    "Business": (12500, "Up to 10 pages, everything in Starter, quote or booking form, Google Business Profile setup, local SEO, professional email address"),
-    "Online Store": (22000, "Up to 50 products loaded, card and EFT payments, courier options, order notifications to WhatsApp, training call"),
+    "Starter": (3500, "Up to 5 pages, copywriting, .co.za domain for the first year, WhatsApp and call buttons, mobile-first design"),
+    "Business": (6500, "Up to 10 pages, everything in Starter, quote or booking form, Google Business Profile setup, local SEO, professional email address"),
+    "Online Store": (12500, "Up to 50 products loaded, card and EFT payments, courier options, order notifications to WhatsApp, training call"),
 }
 TERMS_URL = "klaarwerk.co.za/terms.html"
 
@@ -96,7 +96,7 @@ def page(title, headline, highlight, tag, ref_html, body, foot_extra=""):
 <h1>{E(headline)} <span class="hl">{E(highlight)}</span></h1><div class="tag">{E(tag)}</div></div>
 <div class="ref">{ref_html}</div></div>
 <div class="body">{body}</div>
-<div class="foot"><div>Klaarwerk Studio &middot; Delmas, Mpumalanga &middot; jared.klaarwerk@gmail.com &middot; WhatsApp 066 205 4680 &middot; tinyurl.com/Klaarwerk<br>From R6,500 once-off &middot; 50% deposit, balance at launch &middot; Terms: {TERMS_URL}{foot_extra}</div></div>
+<div class="foot"><div>Klaarwerk Studio &middot; Delmas, Mpumalanga &middot; jared.klaarwerk@gmail.com &middot; WhatsApp 066 205 4680 &middot; tinyurl.com/Klaarwerk<br>From R3,500 once-off &middot; 50% deposit, balance at launch &middot; Terms: {TERMS_URL}{foot_extra}</div></div>
 </div></body></html>"""
 
 
@@ -123,12 +123,12 @@ def letter(c):
 <h2 class="pb">How it works</h2>{STEPS}
 <h2>Investment</h2>
 <table><tr><th>Package</th><th>What's included</th><th class=r>Once-off</th></tr>{rows}</table>
-<p class="note" style="margin-top:6px">Optional Care Plan: R450/month for hosting, security updates, backups and up to 1 hour of changes each month. Cancel any time.</p>
+<p class="note" style="margin-top:6px">Optional Care Plan: R250/month for hosting, security updates, backups and up to 1 hour of changes each month. Cancel any time.</p>
 <p>For {E(c['business'])}, I recommend the <b>{pk}</b> package. {E(c['why'])} Your deposit would be <b>{rand0(price/2)}</b>, and the other {rand0(price/2)} is only due once you've approved the site. You own the website and domain. The full quote is attached as <b>{E(c['quote_no'])}</b>.</p>
 <div class="cta"><b>Would you like a free mock-up of your new homepage first?</b><br><span>Just reply YES, or WhatsApp me on 066 205 4680.</span></div>
 <p style="margin:0 0 4px">Kind regards,</p>
 <p class="sig"><b>Jared Viviers</b><br>Founder, Klaarwerk Studio<br><a href="mailto:jared.klaarwerk@gmail.com">jared.klaarwerk@gmail.com</a> &middot; WhatsApp 066 205 4680 &middot; <a href="https://tinyurl.com/Klaarwerk">tinyurl.com/Klaarwerk</a></p>
-<p class="note"><b style="color:#13232B">P.S.</b> Not the right time? If you know another business that needs a website, we pay R500 for every referral that becomes a client.</p>"""
+<p class="note"><b style="color:#13232B">P.S.</b> Not the right time? If you know another business that needs a website, we pay R300 for every referral that becomes a client.</p>"""
     ref = f"<b>PROPOSAL</b>{E(c['date'])}<br>Valid until {E(c['valid_until'])}"
     return page(f"Proposal - {c['business']}", "A website proposal for", c["business"],
                 "Websites for South African businesses. We do all of it.", ref, body, c.get("foot_note", ""))
@@ -146,7 +146,7 @@ def quote(c):
 <table class="tot"><tr><td style="width:58%"></td><td>Subtotal</td><td class=r>{rand(price)}</td></tr>
 <tr class="grand"><td style="background:#fff"></td><td>Total, once-off</td><td class=r>{rand(price)}</td></tr></table>
 <h2>Optional extra</h2>
-<table><tr><td><b>Care Plan</b><small>Hosting, security updates, backups and up to 1 hour of changes every month. Cancel any time.</small></td><td class=r>R450.00 / month</td></tr></table>
+<table><tr><td><b>Care Plan</b><small>Hosting, security updates, backups and up to 1 hour of changes every month. Cancel any time.</small></td><td class=r>R250.00 / month</td></tr></table>
 <h2 class="pb">Payment</h2>
 <div class="pay"><div><small>To start</small><b>{rand(price/2)}</b><br>50% deposit by EFT</div><div><small>When you approve the site</small><b>{rand(price/2)}</b><br>50% balance, before it goes live</div></div>
 <p class="note">Banking details are on your invoice. We will never change our bank details by email or WhatsApp. If anyone asks you to pay a different account, phone us first on 066 205 4680.</p>

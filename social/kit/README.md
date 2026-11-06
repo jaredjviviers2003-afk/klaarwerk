@@ -7,7 +7,7 @@ Everything needed to make on-brand Klaarwerk posts without internet fonts (the f
 - Fonts: Bricolage Grotesque 800 for headlines (class `disp`), Familjen Grotesk for body, JetBrains Mono for small uppercase labels (class `mono`).
 - Highlight a key word with `<span class="hlbox">` (yellow box) or `<span class="hl">` (yellow underline).
 - Logos in img/: klaarwerk-logo-white.png (on green/ink), klaarwerk-logo.png (on light), klaarwerk-mark.png.
-- Contact on every post: WhatsApp 066 205 4680 · @klaarwerk.media · from R6,500 · done for you in 14 days.
+- Contact on every post: WhatsApp 066 205 4680 · @klaarwerk.media · from R3,500 · done for you in 14 days.
 - Voice: plain, friendly South African English. Short sentences. Talk to small business owners (plumbers, electricians, salons, workshops, shops). No hype, no fake stats, no fake testimonials, no real business names or logos.
 
 ## Videos (1080x1920, 30 fps)
