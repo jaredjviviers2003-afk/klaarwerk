@@ -1,21 +1,21 @@
-checked: Thu Nov  5 18:00:10 UTC 2026
+checked: Fri Nov  6 06:39:29 UTC 2026
 == klaarwerk.co.za A
 185.199.108.153
-185.199.110.153
 185.199.109.153
 185.199.111.153
+185.199.110.153
 == klaarwerk.co.za CNAME
 == www.klaarwerk.co.za A
 jaredjviviers2003-afk.github.io.
-185.199.108.153
-185.199.109.153
 185.199.110.153
+185.199.109.153
 185.199.111.153
+185.199.108.153
 == www.klaarwerk.co.za CNAME
 jaredjviviers2003-afk.github.io.
 == NS
-ns39.domaincontrol.com.
 ns40.domaincontrol.com.
+ns39.domaincontrol.com.
 == http klaarwerk.co.za
 HTTP/1.1 200 OK
 Connection: keep-alive
