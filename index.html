@@ -246,11 +246,38 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 @media (prefers-reduced-motion:reduce){.strata-bento .card{opacity:1;transform:none}}
 
 /* referral */
-.founding{display:flex;flex-wrap:wrap;gap:16px 28px;align-items:center;justify-content:space-between;background:var(--ink,#13232B);color:#fff;border-radius:20px;padding:22px 26px;margin:0 0 28px}
-.founding .f-badge{display:inline-block;background:var(--sun);color:var(--sun-ink);font:700 .78rem var(--body);letter-spacing:.08em;text-transform:uppercase;border-radius:999px;padding:4px 12px}
-.founding h3{color:#fff;margin:10px 0 4px;font-size:clamp(1.3rem,2.6vw,1.7rem)}
-.founding h3 s{opacity:.55;font-weight:600}
-.founding p{margin:0;color:#C9D6D0;max-width:56ch}
+@property --fa{syntax:"<angle>";inherits:false;initial-value:0deg}
+.founding{position:relative;margin:0 0 32px;padding:2px;border-radius:26px;background:conic-gradient(from var(--fa),#F2BE22,#35B48E 25%,#0E6E55 40%,#F2BE22 55%,#FFE27A 65%,#35B48E 80%,#F2BE22);animation:f-spin 6s linear infinite;box-shadow:0 18px 50px -18px rgba(242,190,34,.55),0 6px 24px -10px rgba(14,110,85,.5);isolation:isolate}
+@keyframes f-spin{to{--fa:360deg}}
+.f-card{position:relative;overflow:hidden;border-radius:24px;padding:30px 32px;color:#fff;background:radial-gradient(120% 140% at 0% 0%,#1C3A33 0%,#13232B 45%,#0D181D 100%);display:grid;grid-template-columns:1.35fr 1fr;gap:26px 40px;align-items:center}
+.f-card::before{content:"";position:absolute;inset:-40% -10% auto auto;width:60%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(242,190,34,.22),transparent 65%);pointer-events:none}
+.f-card::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 30%,rgba(255,255,255,.07) 48%,transparent 66%);transform:translateX(-100%);animation:f-sheen 5.5s ease-in-out infinite 1s;pointer-events:none}
+@keyframes f-sheen{0%,55%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+.f-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(242,190,34,.14);color:#F2BE22;border:1px solid rgba(242,190,34,.45);font:600 .74rem var(--mono);letter-spacing:.12em;text-transform:uppercase;border-radius:999px;padding:6px 13px}
+.f-badge svg{width:14px;height:14px}
+.founding h3{font-family:var(--display);color:#fff;margin:14px 0 8px;font-size:clamp(1.55rem,3.2vw,2.2rem);letter-spacing:-.02em}
+.founding h3 em{font-style:normal;background:linear-gradient(90deg,#F2BE22,#FFE27A,#F2BE22);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:f-shine 4s linear infinite}
+@keyframes f-shine{to{background-position:-200% 0}}
+.founding p{margin:0;color:#C9D6D0;max-width:52ch;font-size:1rem}
+.f-perks{display:flex;flex-wrap:wrap;gap:8px 16px;margin:16px 0 0;padding:0;list-style:none;font-size:.92rem;color:#E3EDE7}
+.f-perks li::before{content:"\2713";color:#35B48E;font-weight:700;margin-right:6px}
+.f-deal{position:relative;z-index:1;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:22px 22px 20px;text-align:center;backdrop-filter:blur(4px)}
+.f-was{font:500 .95rem var(--body);color:#8FA39B;text-decoration:line-through}
+.f-price{display:block;font-family:var(--display);font-weight:800;font-size:clamp(2.8rem,6vw,3.7rem);line-height:1;color:#F2BE22;letter-spacing:-.04em;text-shadow:0 0 26px rgba(242,190,34,.35);margin:4px 0 8px}
+.f-save{display:inline-block;background:#35B48E;color:#06201A;font:700 .78rem var(--body);border-radius:999px;padding:3px 11px;letter-spacing:.02em}
+.f-spots{display:flex;justify-content:center;align-items:center;gap:7px;margin:16px 0 14px;font:500 .78rem var(--mono);letter-spacing:.06em;color:#C9D6D0;text-transform:uppercase}
+.f-spots i{width:11px;height:11px;border-radius:50%;background:#F2BE22;box-shadow:0 0 10px rgba(242,190,34,.8)}
+.f-spots i.taken{background:#3A4B52;box-shadow:none}
+.f-cta{width:100%;justify-content:center;position:relative;overflow:hidden;font-size:1.02rem;box-shadow:0 8px 22px -8px rgba(242,190,34,.8)}
+.f-cta::after{content:"";position:absolute;top:0;bottom:0;width:40%;left:-60%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.65),transparent);transform:skewX(-20deg);animation:f-btn 3.2s ease-in-out infinite}
+@keyframes f-btn{0%,60%{left:-60%}100%{left:130%}}
+.f-cta:hover{transform:translateY(-2px)}
+.f-fine{display:block;margin-top:10px;font-size:.78rem;color:#8FA39B}
+.f-fine a{color:#C9D6D0}
+.spark{position:absolute;z-index:2;width:var(--s,14px);height:var(--s,14px);background:#FFE27A;clip-path:polygon(50% 0,61% 39%,100% 50%,61% 61%,50% 100%,39% 61%,0 50%,39% 39%);opacity:0;animation:f-twinkle 3.4s ease-in-out infinite;pointer-events:none;filter:drop-shadow(0 0 4px rgba(255,226,122,.9))}
+@keyframes f-twinkle{0%,100%{opacity:0;transform:scale(.3) rotate(0)}45%{opacity:1;transform:scale(1) rotate(45deg)}70%{opacity:0;transform:scale(.4) rotate(90deg)}}
+@media (max-width:760px){.f-card{grid-template-columns:1fr;padding:24px 20px}.f-deal{padding:20px 16px}}
+@media (prefers-reduced-motion:reduce){.founding,.f-card::after,.founding h3 em,.f-cta::after,.spark{animation:none}.spark{opacity:.8}}
 .refer{background:var(--sun);color:var(--sun-ink)}
 .refer .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,64px);align-items:center}
 .refer .eyebrow{color:var(--sun-ink)}
@@ -367,12 +394,27 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       <p class="lede" style="max-width:42ch">All prices in rand. 50% deposit to start, 50% when you're happy and the site goes live.</p>
     </div>
     <div class="founding" id="founding">
-      <div>
-        <span class="f-badge">Founding client offer &middot; 3 spots</span>
-        <h3>Starter website for R4,500 <s>R6,500</s></h3>
-        <p>We're new, so our first 3 clients get R2,000 off. In return, you leave us an honest Google review, give us a short testimonial, and let us show your site as our work. Same 14 days, same quality.</p>
+      <div class="f-card">
+        <span class="spark" style="top:12%;left:47%;--s:22px;animation-delay:.2s"></span>
+        <span class="spark" style="top:74%;left:5%;--s:15px;animation-delay:1.4s"></span>
+        <span class="spark" style="top:8%;right:5%;--s:18px;animation-delay:2.2s"></span>
+        <span class="spark" style="bottom:10%;right:39%;--s:14px;animation-delay:.9s"></span>
+        <span class="spark" style="top:46%;right:2%;--s:17px;animation-delay:2.8s"></span>
+        <div style="position:relative;z-index:1">
+          <span class="f-badge"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.4 7.2H22l-6.2 4.5 2.4 7.3L12 16.5 5.8 21l2.4-7.3L2 9.2h7.6z"/></svg>Founding client offer</span>
+          <h3>Be one of our first 3 clients and <em>save R2,000</em></h3>
+          <p>We're new, so we're building our first three websites at a founding price. In return, you leave an honest Google review, share a short testimonial, and let us show your site as our work.</p>
+          <ul class="f-perks"><li>Live in 14 days</li><li>Words written for you</li><li>WhatsApp &amp; call buttons</li><li>You own it</li></ul>
+        </div>
+        <div class="f-deal">
+          <span class="f-was">Starter R6,500</span>
+          <span class="f-price">R4,500</span>
+          <span class="f-save">You save R2,000</span>
+          <div class="f-spots" aria-label="3 of 3 founding spots open"><i></i><i></i><i></i><span>3 of 3 spots open</span></div>
+          <a class="btn btn-sun f-cta" id="foundingBtn" href="#">Claim a spot on WhatsApp</a>
+          <span class="f-fine">50% deposit to start &middot; <a href="terms.html#founding">Offer terms</a></span>
+        </div>
       </div>
-      <a class="btn btn-sun" id="foundingBtn" href="#">Claim a spot on WhatsApp</a>
     </div>
     <div class="plans">
       <div class="plan">
