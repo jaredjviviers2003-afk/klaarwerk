@@ -3,4 +3,5 @@ Allow: /
 Disallow: /outreach/
 Disallow: /social/
 Disallow: /demos/
+Disallow: /clients-kit/
 Sitemap: https://klaarwerk.co.za/sitemap.xml
