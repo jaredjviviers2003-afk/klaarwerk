@@ -262,6 +262,35 @@ footer ul{list-style:none;margin:0;padding:0;display:grid;gap:.45rem}
 }
 @media(prefers-reduced-motion:reduce){.slide.on img,.slide-now.on .float{animation:none}.slide-now.on .float{opacity:1;transform:rotate(var(--r))}.hist::after{animation:none}.ch,.slide{transition:none}.hist-tl [aria-selected=true] i b{animation:none;width:100%}}
 
+/* category tiles */
+.cats{padding:28px 0 8px}
+.cat-row{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.cat{all:unset;cursor:pointer;display:flex;align-items:center;gap:.8rem;padding:.6rem .9rem .6rem .6rem;border-radius:20px;background:var(--strata-surface);border:1px solid color-mix(in srgb,var(--strata-text) 9%,transparent);transition:transform .25s,box-shadow .25s,border-color .25s}
+.cat:hover,.cat:focus-visible{transform:translateY(-3px);border-color:var(--strata-primary);box-shadow:0 16px 30px -22px rgba(30,50,20,.5)}
+.cat:focus-visible{outline:2px solid var(--strata-primary);outline-offset:3px}
+.cat img{width:58px;height:58px;border-radius:14px;object-fit:cover;flex:none}
+.cat span{display:grid;flex:1;min-width:0}
+.cat b{font-family:var(--strata-font-display);font-size:1.02rem;line-height:1.15}
+.cat small{font-size:.78rem;color:var(--strata-muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cat i{font-style:normal;font-weight:800;color:var(--strata-primary);transition:transform .25s}
+.cat:hover i{transform:translateX(4px)}
+@media(max-width:1100px){.cat-row{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:700px){.cat-row{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:16px;margin-inline:-16px;padding:4px 16px 8px;scrollbar-width:none}.cat{flex:0 0 72%;scroll-snap-align:start}}
+
+/* concept badge */
+.kw{position:fixed;left:16px;bottom:16px;z-index:70;font-size:.88rem}
+.kw-pill{display:flex;align-items:center;gap:.55rem;padding:.4rem .9rem .4rem .4rem;border-radius:999px;border:1px solid rgba(255,255,255,.15);background:rgba(28,42,26,.88);color:#FFFCF4;font:inherit;font-weight:700;font-size:.82rem;cursor:pointer;backdrop-filter:blur(10px);box-shadow:0 12px 30px -12px rgba(0,0,0,.45)}
+.kw-dot{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;background:#FFE14D;color:#1a1a1a;font-weight:900;font-size:.8rem}
+.kw-card{position:absolute;left:0;bottom:calc(100% + 10px);width:min(300px,calc(100vw - 32px));padding:1.2rem 1.2rem 1rem;border-radius:20px;background:var(--strata-surface);border:1px solid color-mix(in srgb,var(--strata-text) 10%,transparent);box-shadow:0 24px 50px -20px rgba(0,0,0,.4);display:grid;gap:.6rem;animation:kwin .25s ease}
+.kw-card[hidden]{display:none}
+@keyframes kwin{from{opacity:0;transform:translateY(8px)}}
+.kw-card b{font-family:var(--strata-font-display);font-size:1.1rem}
+.kw-card p{margin:0;color:var(--strata-muted);line-height:1.45}
+.kw-card .btn{justify-content:center;padding:.75rem 1rem}
+.kw-link{text-align:center;font-size:.8rem;color:var(--strata-muted)}
+.kw-x{position:absolute;right:6px;top:4px;border:0;background:none;font-size:1.4rem;cursor:pointer;color:var(--strata-muted);width:36px;height:36px}
+@media(max-width:760px){.kw{bottom:84px;left:12px}}
+
 /* shop */
 .shop-top{scroll-margin-top:90px;display:flex;gap:.6rem;flex-wrap:wrap;align-items:center;margin-bottom:1.6rem}
 .tabs{display:flex;gap:.5rem;flex-wrap:wrap}
@@ -362,7 +391,7 @@ footer ul{list-style:none;margin:0;padding:0;display:grid;gap:.45rem}
 </head>
 <body>
 
-<div class="demobar" data-i="demo">Konsepvoorskou gemaak deur <a href="https://klaarwerk.co.za" target="_blank" rel="noopener">Klaarwerk Studio</a>, nie die lewendige webwerf nie.</div>
+
 
 <header class="nav">
   <div class="wrap">
@@ -420,23 +449,13 @@ footer ul{list-style:none;margin:0;padding:0;display:grid;gap:.45rem}
   </div>
 </section>
 
-<section class="strata-marquee" data-strata="marquee-ribbon" aria-label="Wat ons verkoop">
-  <div class="ribbon ribbon--a" data-direction="-1">
-    <div class="track">
-      <span class="item">Mieliesaad <span class="star" aria-hidden="true">✦</span></span>
-      <span class="item">Sojabone <span class="star" aria-hidden="true">✦</span></span>
-      <span class="item">Grassaad <span class="star" aria-hidden="true">✦</span></span>
-      <span class="item">Groentesaad <span class="star" aria-hidden="true">✦</span></span>
-      <span class="item">Afrox gas <span class="star" aria-hidden="true">✦</span></span>
-    </div>
-  </div>
-  <div class="ribbon ribbon--b" data-direction="1" aria-hidden="true">
-    <div class="track">
-      <span class="item">Voëlsaad <span class="star">●</span></span>
-      <span class="item">Hondekos <span class="star">●</span></span>
-      <span class="item">Sakke <span class="star">●</span></span>
-      <span class="item">Saagsels <span class="star">●</span></span>
-    </div>
+<section class="cats" aria-label="Kategorieë">
+  <div class="wrap cat-row">
+    <button class="cat rv" type="button" data-cat="seed"><img src="delmas-saad/seed-pea.jpg" alt="" loading="lazy"><span><b data-i="k-seed">Groentesaad</b><small data-i="k-seeds">12 soorte</small></span><i>→</i></button>
+    <button class="cat rv" type="button" data-cat="gas"><img src="delmas-saad/gas14.jpg" alt="" loading="lazy"><span><b>Afrox gas</b><small data-i="k-gass">9 – 48 kg</small></span><i>→</i></button>
+    <button class="cat rv" type="button" data-cat="farm"><img src="delmas-saad/mock-maize.jpg" alt="" loading="lazy"><span><b data-i="k-farm">Landbou &amp; voer</b><small data-i="k-farms">Mielies, voëlsaad, hondekos</small></span><i>→</i></button>
+    <button class="cat rv" type="button" data-cat="bags"><img src="delmas-saad/mock-bags.jpg" alt="" loading="lazy"><span><b data-i="k-bags">Sakke &amp; saagsels</b><small data-i="k-bagss">25 kg – 1 ton</small></span><i>→</i></button>
+    <button class="cat rv" type="button" data-cat="gift"><img src="delmas-saad/bag.jpg" alt="" loading="lazy"><span><b data-i="k-gift">Geskenke</b><small data-i="k-gifts">Rooted, handgemaak</small></span><i>→</i></button>
   </div>
 </section>
 
@@ -585,34 +604,28 @@ footer ul{list-style:none;margin:0;padding:0;display:grid;gap:.45rem}
     </div>
   </aside>
 </div>
+<div class="kw" id="kw">
+  <button class="kw-pill" type="button" aria-expanded="false" aria-controls="kwcard"><span class="kw-dot">K</span><span data-i="kw1">Konsep deur Klaarwerk</span></button>
+  <div class="kw-card" id="kwcard" hidden>
+    <button class="kw-x" type="button" aria-label="Maak toe">×</button>
+    <b data-i="kw2">Dit is 'n konsepvoorskou</b>
+    <p data-i="kw3">Nie Delmas Saad se lewendige webwerf nie. Ontwerp en gebou deur Klaarwerk Studio, hier in Delmas.</p>
+    <a class="btn btn-green" href="https://wa.me/27662054680?text=Hallo%20Jared%2C%20ek%20het%20die%20Delmas%20Saad%20konsep%20gesien" target="_blank" rel="noopener" data-i="kw4">Ek wil hierdie webwerf</a>
+    <a class="kw-link" href="https://klaarwerk.co.za" target="_blank" rel="noopener">klaarwerk.co.za</a>
+  </div>
+</div>
 <div class="toast" id="toast" role="status"></div>
 
 <div class="mbar"><button type="button" class="call" data-cart style="border:0;font:inherit;flex:1;padding:.85rem;border-radius:999px;font-weight:700;color:#fff;background:color-mix(in srgb,#fff 12%,transparent)"><span data-i="mcart">Mandjie</span> (<span class="mc">0</span>)</button><a class="wa" href="https://wa.me/27828730153?text=Goeie%20dag%20Delmas%20Saad" target="_blank" rel="noopener">WhatsApp</a></div>
 
 <script type="module">
-// Marquee Ribbon (OpenStrata): constant drift, scroll adds a decaying boost, pauses off-screen.
-const section=document.querySelector('[data-strata="marquee-ribbon"]');
-const reduceMotion=matchMedia('(prefers-reduced-motion: reduce)');
-const BASE_SPEED=55;
-const rows=[...section.querySelectorAll('.ribbon')].map((ribbon)=>{
-  const track=ribbon.querySelector('.track');const original=[...track.children];
-  while(track.scrollWidth<ribbon.clientWidth*1.2)original.forEach((n)=>track.append(n.cloneNode(true)));
-  [...track.children].forEach((n)=>{const c=n.cloneNode(true);c.setAttribute('aria-hidden','true');track.append(c);});
-  return{ribbon,track,direction:Number(ribbon.dataset.direction),offset:0,width:track.scrollWidth/2};
-});
-let boost=0,lastScroll=scrollY;
-addEventListener('scroll',()=>{boost=Math.min(boost+Math.abs(scrollY-lastScroll)*6,1600);lastScroll=scrollY;},{passive:true});
-let hover=1;
-section.addEventListener('pointerenter',()=>{hover=.25});section.addEventListener('pointerleave',()=>{hover=1});
-addEventListener('resize',()=>rows.forEach((r)=>{r.width=r.track.scrollWidth/2}));
-let frame=0,visible=false,last=performance.now();
-function tick(now){frame=0;const dt=Math.min(now-last,50)/1000;last=now;boost*=.92;
-  for(const r of rows){r.offset=(r.offset+(BASE_SPEED+boost)*hover*dt)%r.width;const x=r.direction<0?-r.offset:r.offset-r.width;r.track.style.transform=`translate3d(${x}px,0,0)`;}
-  schedule();}
-function schedule(){const run=visible&&!document.hidden&&!reduceMotion.matches;
-  if(run&&!frame){last=performance.now();frame=requestAnimationFrame(tick);}else if(!run&&frame){cancelAnimationFrame(frame);frame=0;}}
-new IntersectionObserver(([e])=>{visible=e.isIntersecting;schedule();}).observe(section);
-document.addEventListener('visibilitychange',schedule);reduceMotion.addEventListener('change',schedule);
+
+// Concept badge
+{const kw=document.getElementById('kw'),pill=kw.querySelector('.kw-pill'),card=document.getElementById('kwcard');
+ const set=o=>{card.hidden=!o;pill.setAttribute('aria-expanded',String(o))};
+ pill.addEventListener('click',()=>set(card.hidden));kw.querySelector('.kw-x').addEventListener('click',()=>{set(false);pill.focus()});
+ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!card.hidden)set(false)});
+ document.addEventListener('click',e=>{if(!kw.contains(e.target))set(false)});}
 
 // Reveal on scroll
 const io=new IntersectionObserver((es)=>es.forEach((e)=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12});
@@ -787,6 +800,8 @@ const EN={
  c2k:'2023 · The third generation',c2h:'The same values. New energy.',c2p:'Lanike and Diek Prinsloo take the reins, and the Rooted gift shop is added.',
  c3k:'Today · 40 years on',c3h:'Seed for today. <em>Growth</em> for tomorrow.',c3p:'Agricultural seed, Afrox gas, feed and gifts. Now you can also order online, straight to WhatsApp.',
  t0:'Chris starts',t1:'3rd Street',t2:'Third generation',t3y:'Today',t3:'Order online',
+ 'k-seed':'Vegetable seed','k-seeds':'12 varieties','k-gass':'9 – 48 kg','k-farm':'Farm &amp; feed','k-farms':'Maize, bird seed, dog food','k-bags':'Bags &amp; sawdust','k-bagss':'25 kg – 1 ton','k-gift':'Gifts','k-gifts':'Rooted, handmade',
+ kw1:'Concept by Klaarwerk',kw2:'This is a concept preview',kw3:'Not Delmas Saad\'s live website. Designed and built by Klaarwerk Studio, right here in Delmas.',kw4:'I want this website',
  fby:'Concept by <a href="https://klaarwerk.co.za" style="opacity:1;text-decoration:underline">Klaarwerk Studio</a>'
 };
 const PH={af:{srch:'Soek produkte…',nmph:'Jou naam'},en:{srch:'Search products…',nmph:'Your name'}};
